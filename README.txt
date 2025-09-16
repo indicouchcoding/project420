@@ -1,0 +1,1 @@
+Deploy on Render as Static Site. Build: (blank). Publish Directory: .  Replace images in /img.
