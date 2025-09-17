@@ -177,3 +177,25 @@ hr{ border:0; border-top:1px solid var(--border); margin:24px 0; }
   .header .brand img{ height:48px; } /* mobile logo size */
   .header .nav{ gap:8px; }
 }
+
+/* === Route 420: Brand title left of logo (no overlap) === */
+.header .brand{
+  flex-direction: row-reverse;   /* puts <span> before <img> visually */
+  max-width: 36vw;               /* keep brand from crowding the nav */
+}
+.header .brand span{
+  margin-left: 0;                /* we flipped the row, so swap spacing side */
+  margin-right: 8px;             /* space between title and logo */
+  line-height: 1;
+}
+/* keep your sizes; adjust if you need more room */
+.header .brand img{
+  height: 64px;
+  width: auto;
+  display: block;
+}
+/* mobile tweak so brand still has room next to hamburger */
+@media (max-width: 720px){
+  .header .brand{ max-width: 50vw; }
+  .header .brand img{ height: 48px; }
+}
