@@ -19,9 +19,18 @@ const remember=document.getElementById('rememberGate');
 if(localStorage.getItem('route420_age_ok')==='yes') gate.classList.add('hidden');
 btn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem('route420_age_ok','yes'); gate.classList.add('hidden'); });
 </script>
-<header class="header"><div class="container bar">
+
+<header class="header">
+  <div class="container bar">
     <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"><span>Premium Glass</span></a>
-    <nav class="nav"><a class="" href="index.html">Home</a> <a class="" href="drops.html">New Drops</a> <a class="" href="gallery.html">Glass Gallery</a> <a class="" href="updates.html">Updates/Blog</a> <a class="" href="brands.html">Brands Carried</a> <a class="active" href="artists.html">Local Artists</a> <a class="" href="reviews.html">Reviews</a> <a class="" href="team.html">Team</a> <a class="" href="story.html">How We Rolled Up</a> <a class="" href="visit.html">Visit</a></nav></div></header>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav"><a class="" href="index.html">Home</a><a class="" href="drops.html">New Drops</a><a class="" href="gallery.html">Glass Gallery</a><a class="" href="updates.html">Updates/Blog</a><a class="" href="brands.html">Brands Carried</a><a class="active" href="artists.html">Local Artists</a><a class="" href="reviews.html">Reviews</a><a class="" href="team.html">Team</a><a class="" href="story.html">How We Rolled Up</a><a class="" href="visit.html">Visit</a></nav>
+  </div>
+</header>
+<script>
+const btn=document.querySelector('.menu-btn'); const nav=document.querySelector('.nav');
+btn.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); });
+</script>
 <section class="section"><div class="container">
   <h2>Local Artists</h2><p class="muted" style="margin-top:6px;">Support your local blowers — submit work to be featured.</p>
   <div class="grid grid-3" style="margin-top:14px;">
