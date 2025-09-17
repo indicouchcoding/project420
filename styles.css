@@ -114,4 +114,68 @@ footer .inner{padding:18px} hr{border:0;border-top:1px solid var(--border);margi
   .nav{ gap: 8px; }                     /* slightly tighter on small screens */
 }
 
+/* === Route 420: Header fix (no overlap, single-line nav) === */
+
+/* Put brand + nav in a strict flex row */
+.header .container.bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;                 /* tiny breathing room */
+}
+
+/* Brand: keep it compact and NEVER let it cover the nav */
+.header .brand{
+  display:inline-flex;
+  align-items:center;
+  flex:0 1 auto;            /* brand can shrink a bit if needed */
+  max-width:42vw;           /* cap width so it can't sit over the nav */
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  position:relative;
+  z-index:1;                /* below the nav so it won't “eat” clicks */
+}
+.header .brand img{
+  height:64px;              /* your doubled size; drop to 56px if you still need space */
+  width:auto;
+  display:block;
+}
+.header .brand span{
+  margin-left:8px;          /* close to logo, but not smushed */
+  line-height:1;
+}
+
+/* Nav: takes remaining space, stays on one line */
+.header .nav{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:10px;
+  flex:1 1 auto;            /* nav gets the rest of the row */
+  min-width:0;              /* allows flexbox to actually shrink */
+  white-space:nowrap;       /* no wrapping */
+  overflow-x:auto;          /* horizontal scroll instead of wrapping if needed */
+  -webkit-overflow-scrolling:touch;
+  position:relative;
+  z-index:2;                /* above brand to ensure clicks hit nav */
+}
+.header .nav::-webkit-scrollbar{ display:none; }
+
+.nav a,
+.nav .menu>button{
+  padding:6px 8px;          /* compact to save width */
+  font-size:15px;
+}
+
+/* Keep dropdowns above content */
+.header{ z-index:50; }
+
+/* Mobile sizing */
+@media (max-width:720px){
+  .header .brand{ max-width:60vw; }
+  .header .brand img{ height:48px; }
+  .header .nav{ gap:8px; }
+}
+
 
