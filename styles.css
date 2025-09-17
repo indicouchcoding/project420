@@ -64,7 +64,7 @@ footer .inner{padding:18px} hr{border:0;border-top:1px solid var(--border);margi
 .header .brand{
   display: inline-flex;       /* keeps it aligned with surrounding inline elements */
   align-items: center;
-  gap: 14px;                  /* space between logo and the "Home / Crew / ..." label */
+  gap: 4px;                  /* space between logo and the "Home / Crew / ..." label */
 }
 
 /* Desktop/tablet default — roughly double the typical ~32px logo height */
@@ -78,7 +78,7 @@ footer .inner{padding:18px} hr{border:0;border-top:1px solid var(--border);margi
 /* Mobile: slightly smaller for header real estate */
 @media (max-width: 720px){
   .header .brand{
-    gap: 10px;
+    gap: 2px;
   }
   .header .brand img{
     height: 48px;
