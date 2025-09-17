@@ -1,6 +1,20 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Crew — Route 420</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
+<style>
+/* dropdown nav additions to match Home */
+.nav .menu{position:relative;display:inline-block}
+.nav .menu>button{background:transparent;border:0;color:inherit;font:inherit;cursor:pointer;padding:8px 10px;border-radius:10px}
+.nav .menu>button:hover{background:rgba(255,255,255,.06)}
+.nav .dropdown{position:absolute;top:100%;left:0;z-index:30;min-width:220px;background:#0a0a0a;border:1px solid #1a1a1a;border-radius:12px;padding:8px;display:none}
+.nav .dropdown a{display:block;padding:8px 10px;border-radius:8px}
+.nav .dropdown a:hover{background:#111}
+.nav .menu.open .dropdown{display:block}
+/* keep dropdowns above content */
+.header{z-index:50}
+/* (optional) hide any footer logo img if present for consistency */
+footer .brand img{display:none}
+</style>
 </head><body>
 <header class="header">
   <div class="container bar">
