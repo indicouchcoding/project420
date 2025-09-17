@@ -2,12 +2,16 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>New Drops — Premium Glass</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
 </head><body>
-<div id="ageGate" class="gate"><div class="panel"><div class="body">
-  <div class="pill">21+ Only</div>
-  <h2>Welcome to Premium Glass</h2>
-  <label style="display:flex;gap:8px;justify-content:center;margin-top:8px;"><input id="rememberGate" type="checkbox"> Don't show again</label>
-  <button id="gateEnter" class="btn" style="margin-top:10px;">Enter</button>
-</div></div></div>
+<div id="ageGate" class="gate"><div class="panel"><div class="chrome"></div>
+  <div class="body">
+    <div class="pill">21+ Only</div>
+    <h2 style="margin:6px 0 2px;">Welcome to Premium Glass</h2>
+    <p class="muted" style="margin:6px 0 8px;">By entering, you confirm you are at least 21 years old.</p>
+    <div class="joint"><div class="smoke"><span></span><span></span><span></span></div></div>
+    <label class="remember"><input id="rememberGate" type="checkbox"> Don't show again</label>
+    <button id="gateEnter" class="btn" style="margin-top:10px;">Enter</button>
+    <div style="margin-top:10px;"><a class="muted" href="https://www.responsibility.org/">Exit</a></div>
+  </div></div></div>
 <script>
 const gate=document.getElementById('ageGate');
 const btn=document.getElementById('gateEnter');
@@ -23,27 +27,19 @@ btn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem('ro
     <nav class="nav"><a class="" href="index.html">Home</a><a class="active" href="drops.html">New Drops</a><a class="" href="gallery.html">Glass Gallery</a><a class="" href="updates.html">Updates/Blog</a><a class="" href="brands.html">Brands Carried</a><a class="" href="artists.html">Local Artists</a><a class="" href="reviews.html">Reviews</a><a class="" href="team.html">Team</a><a class="" href="story.html">How We Rolled Up</a><a class="" href="visit.html">Visit</a></nav>
   </div>
 </header>
-<div class="drawer-overlay" hidden></div>
-<nav class="drawer" aria-hidden="true">
-  <div class="drawer-header">
-    <strong style="font-family:'Bungee',sans-serif;">Menu</strong>
-    <button class="btn drawer-close" aria-label="Close menu">Close</button>
-  </div>
-  <a class="" href="index.html">Home</a><a class="active" href="drops.html">New Drops</a><a class="" href="gallery.html">Glass Gallery</a><a class="" href="updates.html">Updates/Blog</a><a class="" href="brands.html">Brands Carried</a><a class="" href="artists.html">Local Artists</a><a class="" href="reviews.html">Reviews</a><a class="" href="team.html">Team</a><a class="" href="story.html">How We Rolled Up</a><a class="" href="visit.html">Visit</a>
-</nav>
 <script>
-const btn=document.querySelector('.menu-btn');
-const drawer=document.querySelector('.drawer');
-const overlay=document.querySelector('.drawer-overlay');
-const closeBtn=document.querySelector('.drawer-close');
-function openDrawer(){ drawer.classList.add('open'); overlay.classList.add('show'); overlay.hidden=false; document.body.classList.add('lock'); btn.setAttribute('aria-expanded','true'); drawer.setAttribute('aria-hidden','false'); }
-function closeDrawer(){ drawer.classList.remove('open'); overlay.classList.remove('show'); document.body.classList.remove('lock'); btn.setAttribute('aria-expanded','false'); drawer.setAttribute('aria-hidden','true'); setTimeout(()=>overlay.hidden=true,200); }
-btn.addEventListener('click', openDrawer);
-closeBtn.addEventListener('click', closeDrawer);
-overlay.addEventListener('click', closeDrawer);
-addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
-drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeDrawer));
-</script><section class="section"><div class="container"><h2>New Drops</h2><p class="muted">Content goes here.</p></div></section>
+const btn=document.querySelector('.menu-btn'); const nav=document.querySelector('.nav');
+btn.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); });
+</script>
+<section class="section"><div class="container">
+  <h2>New Drops</h2><p class="muted" style="margin-top:6px;">One-offs, local heat, and daily drivers. Call to hold.</p>
+  <div class="grid grid-3" style="margin-top:14px;">
+    <div class="card"><img class="gx" src="img/recycler01.jpg" alt="Drop 1"><div style="padding:12px;">Hand-blown Recycler • $$</div></div>
+    <div class="card"><img class="gx" src="img/spoon01.jpg" alt="Drop 2"><div style="padding:12px;">Fumed Spoon (Color-shift) • $</div></div>
+    <div class="card"><img class="gx" src="img/beaker01.jpg" alt="Drop 3"><div style="padding:12px;">Mini Beaker • $$</div></div>
+  </div>
+</div></section>
+
 <footer><div class="container"><div class="card inner">
   <div class="grid grid-2">
     <div><div class="brand"><img src="img/logo.png" alt="Route 420" style="height:28px;"> <span>Premium Glass</span></div>
