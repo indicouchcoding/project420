@@ -1,6 +1,23 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Glass Gallery — Premium Glass</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
+<style>
+/* dropdown nav additions to match Home */
+.nav .menu{position:relative;display:inline-block}
+.nav .menu>button{background:transparent;border:0;color:inherit;font:inherit;cursor:pointer;padding:8px 10px;border-radius:10px}
+.nav .menu>button:hover{background:rgba(255,255,255,.06)}
+.nav .dropdown{position:absolute;top:100%;left:0;z-index:30;min-width:220px;background:#0a0a0a;border:1px solid #1a1a1a;border-radius:12px;padding:8px;display:none}
+.nav .dropdown a{display:block;padding:8px 10px;border-radius:8px}
+.nav .dropdown a:hover{background:#111}
+.nav .menu.open .dropdown{display:block}
+/* keep dropdowns above content */
+.header{z-index:50}
+/* remove footer logo image, keep text */
+footer .brand img{display:none}
+/* simple anchor helper so jumps don't hide under header (optional) */
+.anchor{display:block;height:0;margin-top:-80px;visibility:hidden}
+@media (max-width:720px){ .anchor{margin-top:-64px} }
+</style>
 </head><body>
 <div id="ageGate" class="gate"><div class="panel"><div class="chrome"></div>
   <div class="body">
@@ -14,25 +31,84 @@
   </div></div></div>
 <script>
 const gate=document.getElementById('ageGate');
-const btn=document.getElementById('gateEnter');
+const gateBtn=document.getElementById('gateEnter');
 const remember=document.getElementById('rememberGate');
 if(localStorage.getItem('route420_age_ok')==='yes') gate.classList.add('hidden');
-btn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem('route420_age_ok','yes'); gate.classList.add('hidden'); });
+gateBtn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem('route420_age_ok','yes'); gate.classList.add('hidden'); });
 </script>
 
 <header class="header">
   <div class="container bar">
-    <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"><span>Premium Glass</span></a>
+    <!-- page name next to logo -->
+    <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"><span>Glass Gallery</span></a>
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="nav"><a class="" href="index.html">Home</a><a class="" href="drops.html">New Drops</a><a class="active" href="gallery.html">Glass Gallery</a><a class="" href="updates.html">Updates/Blog</a><a class="" href="brands.html">Brands Carried</a><a class="" href="artists.html">Local Artists</a><a class="" href="reviews.html">Reviews</a><a class="" href="team.html">Team</a><a class="" href="story.html">How We Rolled Up</a><a class="" href="visit.html">Visit</a></nav>
+
+    <!-- UPDATED NAV with dropdowns -->
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="drops.html">Fresh Drops</a>
+
+      <div class="menu">
+        <button type="button">Glass Gallery ▾</button>
+        <div class="dropdown">
+          <a href="#bongs">Bongs</a>
+          <a href="#dry-bowls">Dry Bowls</a>
+          <a href="#slides">Bowl Slides</a>
+          <a href="#stems">Stems</a>
+        </div>
+      </div>
+
+      <div class="menu">
+        <button type="button">Updates/Blogs ▾</button>
+        <div class="dropdown">
+          <a href="updates.html#updates">Updates</a>
+          <a href="updates.html#blogs">Blogs</a>
+          <a href="updates.html#archives">Archives</a>
+        </div>
+      </div>
+
+      <div class="menu">
+        <button type="button">Brands Carried ▾</button>
+        <div class="dropdown">
+          <a href="brands.html#grav">GRAV</a>
+          <a href="brands.html#zong">ZONG</a>
+          <a href="brands.html#puffco">PuffCo</a>
+          <a href="brands.html#focusv">Focus V</a>
+          <a href="brands.html#more">More...</a>
+        </div>
+      </div>
+
+      <a href="artists.html">Local Artists</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="crew.html">Crew</a>
+      <a href="story.html">How We Rolled Up</a>
+      <a href="visit.html">Visit</a>
+    </nav>
   </div>
 </header>
 <script>
+// mobile hamburger toggle (uses your .nav.open pattern)
 const btn=document.querySelector('.menu-btn'); const nav=document.querySelector('.nav');
 btn.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); });
+// dropdown open/close like Home
+document.querySelectorAll('.nav .menu>button').forEach(b=>b.addEventListener('click',(e)=>{
+  const m=e.currentTarget.parentElement; m.classList.toggle('open');
+  document.querySelectorAll('.nav .menu').forEach(x=>{ if(x!==m) x.classList.remove('open'); });
+  e.stopPropagation();
+}));
+document.addEventListener('click',(e)=>{ if(!e.target.closest('.nav .menu')) document.querySelectorAll('.nav .menu').forEach(m=>m.classList.remove('open')); });
 </script>
+
 <section class="section"><div class="container">
-  <h2>Glass Gallery</h2><p class="muted" style="margin-top:6px;">Highlights from the case (grayscale with color on hover).</p>
+  <h2>Glass Gallery</h2>
+  <p class="muted" style="margin-top:6px;">Highlights from the case (grayscale with color on hover).</p>
+
+  <!-- invisible anchors for dropdown links -->
+  <span id="bongs" class="anchor"></span>
+  <span id="dry-bowls" class="anchor"></span>
+  <span id="slides" class="anchor"></span>
+  <span id="stems" class="anchor"></span>
+
   <div class="grid grid-3" style="margin-top:14px;">
     <div class="card"><img class="gx" src="img/gallery01.jpg" alt="Gallery 1"></div>
     <div class="card"><img class="gx" src="img/gallery02.jpg" alt="Gallery 2"></div>
@@ -42,7 +118,7 @@ btn.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btn.
 
 <footer><div class="container"><div class="card inner">
   <div class="grid grid-2">
-    <div><div class="brand"><img src="img/logo.png" alt="Route 420" style="height:28px;"> <span>Premium Glass</span></div>
+    <div><div class="brand"><span>Premium Glass</span></div>
       <div class="muted">Premium Glass • THCa Flower • Edibles • Disposables</div></div>
     <div class="muted">
       <div>21+ Only. Valid Drivers License/ID required for Sale.</div>
