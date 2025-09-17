@@ -57,63 +57,6 @@ footer .inner{padding:18px} hr{border:0;border-top:1px solid var(--border);margi
   .nav a{padding:10px 6px;border:1px solid var(--border);border-radius:10px;margin-left:0}
 }
 
-/* === Route 420: Header tightening + single-row nav === */
-
-/* 1) Tighten brand: logo + title close together */
-.header .brand{
-  display: inline-flex;
-  align-items: center;
-}
-.header .brand img{
-  height: 64px;   /* keep your doubled size */
-  width: auto;
-  display: block;
-}
-.header .brand span{
-  margin-left: 6px;   /* pull title closer to the logo */
-  line-height: 1;     /* avoids extra vertical space */
-}
-
-/* 2) Make header bar a proper flex row */
-.header .container.bar{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;          /* tiny safety gap so brand/hamburger don't touch */
-}
-
-/* 3) Force the nav to stay on a single line */
-.header .nav{
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;                 /* shrink if you still need more room */
-  flex-wrap: nowrap;         /* no wrapping */
-  white-space: nowrap;       /* keep items on one line */
-  overflow-x: auto;          /* if it *would* overflow, allow horizontal scroll instead of wrapping */
-  -webkit-overflow-scrolling: touch;
-  min-width: 0;              /* let flexbox actually shrink this area */
-}
-
-/* Optional: hide scrollbar aesthetics on WebKit (still scrolls if needed) */
-.header .nav::-webkit-scrollbar{ display: none; }
-
-/* 4) Compact nav buttons/links to save width */
-.nav a,
-.nav .menu>button{
-  padding: 6px 8px;          /* slightly tighter than default */
-  font-size: 15px;           /* nudge down a hair; bump to 16px if you’ve got space */
-}
-
-/* 5) Keep dropdowns positioned correctly above content */
-.header{ z-index: 50; }
-
-/* Mobile keeps the hamburger behavior you already have */
-@media (max-width: 720px){
-  .header .brand img{ height: 48px; }  /* your mobile size */
-  .nav{ gap: 8px; }                     /* slightly tighter on small screens */
-}
-
 /* === Route 420: Header fix (no overlap, single-line nav) === */
 
 /* Put brand + nav in a strict flex row */
