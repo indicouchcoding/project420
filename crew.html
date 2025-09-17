@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Crew — Route 420</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
+<title>Crew — Premium Glass</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
 <style>
 /* dropdown nav additions to match Home */
 .nav .menu{position:relative;display:inline-block}
@@ -12,7 +12,7 @@
 .nav .menu.open .dropdown{display:block}
 /* keep dropdowns above content */
 .header{z-index:50}
-/* (optional) hide any footer logo img if present for consistency */
+/* hide any footer logo img for consistency */
 footer .brand img{display:none}
 </style>
 </head><body>
@@ -69,7 +69,15 @@ document.querySelectorAll('.menu>button').forEach(b=>b.addEventListener('click',
 
 <section class="section"><div class="container">
   <h2>Crew</h2>
-  <p class="muted">Dylan Ingram (Owner), Dylan “Jerry” Halterman (Manager), Jacob “Cobb” Johnson (Budtender / Salesperson), Jake “Towelie” Coffey (Budtender / Salesman / Social Media)</p>
+  <p class="muted" style="margin-top:6px;">Real Stoners helping Real Stoners™</p>
+
+  <!-- restored crew grid with images + roles -->
+  <div class="grid grid-3" style="margin-top:14px;">
+    <div class="card"><img src="img/team-dylan-i.jpg" alt="Dylan Ingram"><div style="padding:12px;"><h3>Dylan Ingram</h3><p class="muted">Owner</p></div></div>
+    <div class="card"><img src="img/team-dylan-jerry.jpg" alt='Dylan "Jerry" Halterman'><div style="padding:12px;"><h3>Dylan “Jerry” Halterman</h3><p class="muted">Manager</p></div></div>
+    <div class="card"><img src="img/team-jacob-cobb.jpg" alt='Jacob "Cobb" Johnson'><div style="padding:12px;"><h3>Jacob “Cobb” Johnson</h3><p class="muted">Budtender / Salesperson</p></div></div>
+    <div class="card"><img src="img/team-jake-towelie.jpg" alt='Jake "Towelie" Coffey'><div style="padding:12px;"><h3>Jake “Towelie” Coffey</h3><p class="muted">Budtender / Salesman / Social Media</p></div></div>
+  </div>
 </div></section>
 
 <footer><div class="container"><div class="card inner">
