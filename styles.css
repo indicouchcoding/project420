@@ -57,30 +57,27 @@ footer .inner{padding:18px} hr{border:0;border-top:1px solid var(--border);margi
   .nav a{padding:10px 6px;border:1px solid var(--border);border-radius:10px;margin-left:0}
 }
 
-/* === Route 420: Header Logo Size & Spacing Overrides === */
-/* Put this at the very end of styles.css so it wins over earlier rules */
+/* === Route 420: Header Logo Size Overrides (no gap) === */
+/* Put this at the very end of styles.css so it overrides earlier rules */
 
-/* Lay out the brand as a row and add breathing room between logo + page title */
+/* Keep brand elements aligned without extra spacing */
 .header .brand{
-  display: inline-flex;       /* keeps it aligned with surrounding inline elements */
+  display: inline-flex;
   align-items: center;
-  gap: 4px;                  /* space between logo and the "Home / Crew / ..." label */
 }
 
-/* Desktop/tablet default — roughly double the typical ~32px logo height */
+/* Desktop/tablet: ~double size */
 .header .brand img{
-  height: 64px;               /* adjust this number if you want even bigger/smaller */
-  width: auto;                /* preserve aspect ratio */
-  display: block;             /* avoids baseline gap */
-  image-rendering: -webkit-optimize-contrast; /* slightly crisper on some browsers */
+  height: 64px;   /* tweak as you like */
+  width: auto;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
 }
 
-/* Mobile: slightly smaller for header real estate */
+/* Mobile: a bit smaller */
 @media (max-width: 720px){
-  .header .brand{
-    gap: 2px;
-  }
   .header .brand img{
     height: 48px;
   }
 }
+
