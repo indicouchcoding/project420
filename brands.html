@@ -40,10 +40,21 @@ gateBtn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem
     <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"><span>Brands Carried</span></a>
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 
-    <!-- UPDATED NAV with dropdowns -->
+    <!-- UPDATED NAV with dropdowns (no duplicate standalone link) -->
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="drops.html">Fresh Drops</a>
+
+      <div class="menu">
+        <button type="button" aria-current="page">Brands Carried ▾</button>
+        <div class="dropdown">
+          <a href="#grav">GRAV</a>
+          <a href="#zong">ZONG</a>
+          <a href="#puffco">PuffCo</a>
+          <a href="#focusv">Focus V</a>
+          <a href="#more">More...</a>
+        </div>
+      </div>
 
       <div class="menu">
         <button type="button">Glass Gallery ▾</button>
@@ -64,18 +75,6 @@ gateBtn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem
         </div>
       </div>
 
-      <div class="menu">
-        <button type="button">Brands Carried ▾</button>
-        <div class="dropdown">
-          <a href="brands.html#grav">GRAV</a>
-          <a href="brands.html#zong">ZONG</a>
-          <a href="brands.html#puffco">PuffCo</a>
-          <a href="brands.html#focusv">Focus V</a>
-          <a href="brands.html#more">More...</a>
-        </div>
-      </div>
-
-      <a class="active" href="brands.html">Brands Carried</a>
       <a href="artists.html">Local Artists</a>
       <a href="reviews.html">Reviews</a>
       <a href="crew.html">Crew</a>
@@ -100,10 +99,18 @@ document.addEventListener('click',(e)=>{ if(!e.target.closest('.nav .menu')) doc
 
 <section class="section"><div class="container">
   <h2>Brands Carried</h2><p class="muted" style="margin-top:6px;">A rotating roster — call for availability.</p>
+
+  <!-- section anchors match dropdown -->
+  <span id="grav" style="position:relative;top:-80px;"></span>
+  <span id="zong" style="position:relative;top:-80px;"></span>
+  <span id="puffco" style="position:relative;top:-80px;"></span>
+  <span id="focusv" style="position:relative;top:-80px;"></span>
+  <span id="more" style="position:relative;top:-80px;"></span>
+
   <div class="grid grid-3" style="margin-top:14px;">
-    <div id="grav" class="card" style="padding:16px;"><h3>Grav</h3><p class="muted">Glass & accessories</p></div>
-    <div id="puffco" class="card" style="padding:16px;"><h3>Puffco</h3><p class="muted">Devices & parts</p></div>
-    <div id="more" class="card" style="padding:16px;"><h3>Raw</h3><p class="muted">Papers & cones</p></div>
+    <div class="card" style="padding:16px;"><h3>Grav</h3><p class="muted">Glass & accessories</p></div>
+    <div class="card" style="padding:16px;"><h3>Puffco</h3><p class="muted">Devices & parts</p></div>
+    <div class="card" style="padding:16px;"><h3>Raw</h3><p class="muted">Papers & cones</p></div>
   </div>
 </div></section>
 
