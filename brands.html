@@ -40,21 +40,10 @@ gateBtn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem
     <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"><span>Brands Carried</span></a>
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 
-    <!-- UPDATED NAV with dropdowns (no duplicate standalone link) -->
+    <!-- UPDATED NAV with dropdowns (order matches other pages) -->
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="drops.html">Fresh Drops</a>
-
-      <div class="menu">
-        <button type="button" aria-current="page">Brands Carried ▾</button>
-        <div class="dropdown">
-          <a href="#grav">GRAV</a>
-          <a href="#zong">ZONG</a>
-          <a href="#puffco">PuffCo</a>
-          <a href="#focusv">Focus V</a>
-          <a href="#more">More...</a>
-        </div>
-      </div>
 
       <div class="menu">
         <button type="button">Glass Gallery ▾</button>
@@ -72,6 +61,17 @@ gateBtn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem
           <a href="updates.html#updates">Updates</a>
           <a href="updates.html#blogs">Blogs</a>
           <a href="updates.html#archives">Archives</a>
+        </div>
+      </div>
+
+      <div class="menu">
+        <button type="button" aria-current="page">Brands Carried ▾</button>
+        <div class="dropdown">
+          <a href="#grav">GRAV</a>
+          <a href="#zong">ZONG</a>
+          <a href="#puffco">PuffCo</a>
+          <a href="#focusv">Focus V</a>
+          <a href="#more">More...</a>
         </div>
       </div>
 
