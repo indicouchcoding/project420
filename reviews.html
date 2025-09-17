@@ -1,9 +1,20 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reviews — Route 420</title>
+<title>Reviews — Premium Glass</title>
 <link rel="icon" href="img/logo.png">
 <link rel="stylesheet" href="styles.css">
 <style>
+/* dropdown nav additions to match Home */
+.nav .menu{position:relative;display:inline-block}
+.nav .menu>button{background:transparent;border:0;color:inherit;font:inherit;cursor:pointer;padding:8px 10px;border-radius:10px}
+.nav .menu>button:hover{background:rgba(255,255,255,.06)}
+.nav .dropdown{position:absolute;top:100%;left:0;z-index:30;min-width:220px;background:#0a0a0a;border:1px solid #1a1a1a;border-radius:12px;padding:8px;display:none}
+.nav .dropdown a{display:block;padding:8px 10px;border-radius:8px}
+.nav .dropdown a:hover{background:#111}
+.nav .menu.open .dropdown{display:block}
+/* keep dropdowns above content */
+.header{z-index:50}
+
 .review-card{background:#0a0a0a;border:1px solid #1a1a1a;border-radius:16px;padding:16px}
 .stars{letter-spacing:1px}
 .loadwrap{display:flex;justify-content:center;margin-top:12px}
@@ -49,15 +60,16 @@
   </div>
 </header>
 <script>
+// mobile hamburger toggle (uses your .nav.open pattern)
 const btn=document.querySelector('.menu-btn'); const nav=document.querySelector('.nav');
 btn.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); });
-document.addEventListener('click', (e)=>{
-  if(!e.target.closest('.menu')) document.querySelectorAll('.menu').forEach(m=>m.classList.remove('open'));
-});
-document.querySelectorAll('.menu>button').forEach(b=>b.addEventListener('click', (e)=>{
+// dropdown open/close like Home
+document.querySelectorAll('.menu>button').forEach(b=>b.addEventListener('click',(e)=>{
   const m=e.currentTarget.parentElement; m.classList.toggle('open');
   document.querySelectorAll('.menu').forEach(x=>{ if(x!==m) x.classList.remove('open'); });
+  e.stopPropagation();
 }));
+document.addEventListener('click',(e)=>{ if(!e.target.closest('.menu')) document.querySelectorAll('.menu').forEach(m=>m.classList.remove('open')); });
 </script>
 
 <section class="section"><div class="container">
