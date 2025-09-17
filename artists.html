@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Local Artists — Premium Glass</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
+</head><body>
+<div id="ageGate" class="gate"><div class="panel"><div class="chrome"></div>
+  <div class="body">
+    <div class="pill">21+ Only</div>
+    <h2 style="margin:6px 0 2px;">Welcome to Premium Glass</h2>
+    <p class="muted" style="margin:6px 0 8px;">By entering, you confirm you are at least 21 years old.</p>
+    <div class="joint"><div class="smoke"><span></span><span></span><span></span></div></div>
+    <label class="remember"><input id="rememberGate" type="checkbox"> Don't show again</label>
+    <button id="gateEnter" class="btn" style="margin-top:10px;">Enter</button>
+    <div style="margin-top:10px;"><a class="muted" href="https://www.responsibility.org/">Exit</a></div>
+  </div></div></div>
+<script>
+const gate=document.getElementById('ageGate');
+const btn=document.getElementById('gateEnter');
+const remember=document.getElementById('rememberGate');
+if(localStorage.getItem('route420_age_ok')==='yes') gate.classList.add('hidden');
+btn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem('route420_age_ok','yes'); gate.classList.add('hidden'); });
+</script>
+<header class="header"><div class="container bar">
+    <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"><span>Premium Glass</span></a>
+    <nav class="nav"><a class="" href="index.html">Home</a> <a class="" href="drops.html">New Drops</a> <a class="" href="gallery.html">Glass Gallery</a> <a class="" href="updates.html">Updates/Blog</a> <a class="" href="brands.html">Brands Carried</a> <a class="active" href="artists.html">Local Artists</a> <a class="" href="reviews.html">Reviews</a> <a class="" href="team.html">Team</a> <a class="" href="story.html">How We Rolled Up</a> <a class="" href="visit.html">Visit</a></nav></div></header>
+<section class="section"><div class="container">
+  <h2>Local Artists</h2><p class="muted" style="margin-top:6px;">Support your local blowers — submit work to be featured.</p>
+  <div class="grid grid-3" style="margin-top:14px;">
+    <div class="card"><img class="gx" src="img/artist01.jpg" alt="Artist 1"><div style="padding:12px;"><h3>@glasswizard</h3><p class="muted">Recycler rigs</p></div></div>
+    <div class="card"><img class="gx" src="img/artist02.jpg" alt="Artist 2"><div style="padding:12px;"><h3>@fumejunkie</h3><p class="muted">Fumed spoons</p></div></div>
+    <div class="card"><img class="gx" src="img/artist03.jpg" alt="Artist 3"><div style="padding:12px;"><h3>@uvlab</h3><p class="muted">UV accents</p></div></div>
+  </div>
+</div></section>
+
+<footer><div class="container"><div class="card inner">
+  <div class="grid grid-2">
+    <div><div class="brand"><img src="img/logo.png" alt="Route 420" style="height:28px;"> <span>Premium Glass</span></div>
+      <div class="muted">Premium Glass • THCa Flower • Edibles • Disposables</div></div>
+    <div class="muted">
+      <div>21+ Only. Valid Drivers License/ID required for Sale.</div>
+      <div style="margin-top:6px;">All Products are Compliant with applicable VA State Laws. THCa/Hemp Derived Products are not for Sale where Prohibited.</div>
+    </div>
+  </div><hr><div class="muted">© 2025 Route 420 LLC. All rights reserved.</div></div></div></footer>
+</body></html>

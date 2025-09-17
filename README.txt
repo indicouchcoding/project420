@@ -1,0 +1,1 @@
+Deploy on Render as Static Site. Build Command: (blank). Publish Directory: .  Replace placeholders in /img. Reviews/Blog use N/A placeholders for now. Age gate shows each visit unless 'Don't show again' is checked.
