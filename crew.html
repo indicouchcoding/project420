@@ -1,17 +1,10 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reviews — Route 420</title>
-<link rel="icon" href="img/logo.png">
-<link rel="stylesheet" href="styles.css">
-<style>
-.review-card{background:#0a0a0a;border:1px solid #1a1a1a;border-radius:16px;padding:16px}
-.stars{letter-spacing:1px}
-.loadwrap{display:flex;justify-content:center;margin-top:12px}
-</style>
+<title>Crew — Route 420</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
 </head><body>
 <header class="header">
   <div class="container bar">
-    <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"><span>Reviews</span></a>
+    <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"><span>Crew</span></a>
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav">
       <a href="index.html">Home</a>
@@ -41,8 +34,8 @@
         </div>
       </div>
       <a href="artists.html">Local Artists</a>
-      <a class="active" href="reviews.html">Reviews</a>
-      <a href="crew.html">Crew</a>
+      <a href="reviews.html">Reviews</a>
+      <a class="active" href="crew.html">Crew</a>
       <a href="story.html">How We Rolled Up</a>
       <a href="visit.html">Visit</a>
     </nav>
@@ -61,14 +54,8 @@ document.querySelectorAll('.menu>button').forEach(b=>b.addEventListener('click',
 </script>
 
 <section class="section"><div class="container">
-  <h2>Reviews</h2>
-  <div id="reviewsGrid" class="grid grid-3" style="margin-top:14px;"></div>
-  <div class="loadwrap"><button id="loadMore" class="btn">Load more</button></div>
-
-  <div class="card inner" style="margin-top:16px;">
-    <p><a class="btn" href="https://www.google.com/search?q=Route+420+Reviews" target="_blank" rel="noopener">View Google Reviews</a>
-    <a class="btn" style="margin-left:8px;" href="https://www.facebook.com/420Route/reviews" target="_blank" rel="noopener">View Facebook Reviews</a></p>
-  </div>
+  <h2>Crew</h2>
+  <p class="muted">Dylan Ingram (Owner), Dylan “Jerry” Halterman (Manager), Jacob “Cobb” Johnson (Budtender / Salesperson), Jake “Towelie” Coffey (Budtender / Salesman / Social Media)</p>
 </div></section>
 
 <footer><div class="container"><div class="card inner">
@@ -80,32 +67,4 @@ document.querySelectorAll('.menu>button').forEach(b=>b.addEventListener('click',
       <div style="margin-top:6px;">All Products are Compliant with applicable VA State Laws. THCa/Hemp Derived Products are not for Sale where Prohibited. All Products are Legal under the 2018 Farm Bill Act.</div>
     </div>
   </div><hr><div class="muted">© 2025 Route 420 LLC. All rights reserved.</div></div></div></footer>
-
-<script>
-const reviewsData = [
-  {stars:5, text:"Hands down best shop in town!", source:"Facebook"},
-  {stars:5, text:"Friendly, knowledgeable staff. Great selection.", source:"Google"},
-  {stars:5, text:"Helped me pick the perfect setup.", source:"Google"},
-  {stars:5, text:"Clean shop and fair prices — will return.", source:"Facebook"},
-  {stars:5, text:"Super chill vibes and quality glass.", source:"Google"},
-  {stars:5, text:"My go-to spot in Staunton.", source:"Google"},
-  {stars:5, text:"Found exactly what I needed fast.", source:"Facebook"},
-  {stars:5, text:"Top-tier glass and accessories.", source:"Google"}
-];
-let shown=0; const step=6;
-const grid=document.getElementById('reviewsGrid');
-const more=document.getElementById('loadMore');
-function render(){
-  for(let i=shown;i<Math.min(shown+step,reviewsData.length);i++){
-    const r=reviewsData[i];
-    const el=document.createElement('article'); el.className='review-card';
-    el.innerHTML = `<div class="stars">${'★'.repeat(r.stars)}</div>
-      <p class="muted">“${r.text}”</p><p class="muted" style="font-size:12px;">— ${r.source}</p>`;
-    grid.appendChild(el);
-  }
-  shown=Math.min(shown+step,reviewsData.length);
-  if(shown>=reviewsData.length) more.style.display='none';
-}
-more.addEventListener('click',render); render();
-</script>
 </body></html>

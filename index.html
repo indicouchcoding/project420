@@ -2,29 +2,22 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Home — Route 420</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
 <style>
-/* --- inline add-ons so you don't have to touch styles.css --- */
-/* Dropdown menus */
-.nav .menu { position: relative; display: inline-block; }
-.nav .menu > button { background: transparent; border: 0; color: inherit; font: inherit; cursor: pointer; padding: 8px 10px; border-radius: 10px; }
-.nav .menu > button:hover { background: rgba(255,255,255,.06); }
-.nav .dropdown { position: absolute; top: 100%; left: 0; z-index: 30; min-width: 220px;
-  background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 12px; padding: 8px; display: none; }
-.nav .dropdown a { display: block; padding: 8px 10px; border-radius: 8px; }
-.nav .dropdown a:hover { background: #111; }
-.nav .menu.open .dropdown { display: block; }
-/* If your mobile nav uses .nav.open to show the whole list, dropdowns will just stack; this is fine */
-
-/* Simple hero slideshow */
-.slider { position: relative; border-radius: 20px; overflow: hidden; border: 1px solid #1a1a1a; height: 320px; }
-.slider .slide { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; object-fit: cover; width: 100%; height: 100%; }
-.slider .slide.active { opacity: 1; }
-.slider .dots { position: absolute; bottom: 8px; left: 0; right: 0; display: flex; gap: 6px; justify-content: center; }
-.slider .dot { width: 8px; height: 8px; border-radius: 50%; background: #666; border: 1px solid #333; cursor: pointer; }
-.slider .dot.active { background: #fff; }
-/* Make card images uniform */
-.card img { width: 100%; height: auto; display: block; }
-/* Ensure dropdowns are usable over sticky header */
-.header { z-index: 50; }
+.nav .menu{position:relative;display:inline-block}
+.nav .menu>button{background:transparent;border:0;color:inherit;font:inherit;cursor:pointer;padding:8px 10px;border-radius:10px}
+.nav .menu>button:hover{background:rgba(255,255,255,.06)}
+.nav .dropdown{position:absolute;top:100%;left:0;z-index:30;min-width:220px;background:#0a0a0a;border:1px solid #1a1a1a;border-radius:12px;padding:8px;display:none}
+.nav .dropdown a{display:block;padding:8px 10px;border-radius:8px}
+.nav .dropdown a:hover{background:#111}
+.nav .menu.open .dropdown{display:block}
+.slider{position:relative;border-radius:20px;overflow:hidden;border:1px solid #1a1a1a;height:320px}
+.slider .slide{position:absolute;inset:0;opacity:0;transition:opacity .6s ease;object-fit:cover;width:100%;height:100%}
+.slider .slide.active{opacity:1}
+.slider .dots{position:absolute;bottom:8px;left:0;right:0;display:flex;gap:6px;justify-content:center}
+.slider .dot{width:8px;height:8px;border-radius:50%;background:#666;border:1px solid #333;cursor:pointer}
+.slider .dot.active{background:#fff}
+.card img{display:block;width:100%;height:auto}
+.hero .card{padding:0}
+footer .brand img{display:none}
 </style>
 </head><body>
 <div id="ageGate" class="gate"><div class="panel"><div class="chrome"></div>
@@ -87,21 +80,14 @@ btn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem('ro
   </div>
 </header>
 <script>
-// Keep your existing mobile toggle
 const btnMenu=document.querySelector('.menu-btn'); const nav=document.querySelector('.nav');
 btnMenu.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btnMenu.setAttribute('aria-expanded', open?'true':'false'); });
-// Dropdown toggles (click-to-open; closes others; click-away to close)
-document.querySelectorAll('.nav .menu > button').forEach(b=>{
-  b.addEventListener('click', (e)=>{
-    const m=e.currentTarget.parentElement;
-    const isOpen=m.classList.toggle('open');
-    document.querySelectorAll('.nav .menu').forEach(x=>{ if(x!==m) x.classList.remove('open'); });
-    e.stopPropagation();
-  });
-});
-document.addEventListener('click', (e)=>{
-  if(!e.target.closest('.nav .menu')) document.querySelectorAll('.nav .menu').forEach(m=>m.classList.remove('open'));
-});
+document.querySelectorAll('.nav .menu>button').forEach(b=>b.addEventListener('click',(e)=>{
+  const m=e.currentTarget.parentElement; m.classList.toggle('open');
+  document.querySelectorAll('.nav .menu').forEach(x=>{ if(x!==m) x.classList.remove('open'); });
+  e.stopPropagation();
+}));
+document.addEventListener('click',(e)=>{ if(!e.target.closest('.nav .menu')) document.querySelectorAll('.nav .menu').forEach(m=>m.classList.remove('open')); });
 </script>
 
 <section class="hero"><div class="bgfx"></div><div class="container inner grid grid-2">
@@ -112,8 +98,7 @@ document.addEventListener('click', (e)=>{
     <div style="margin-top:14px;"><a class="btn" href="drops.html">Shop New Drops</a>
     <a class="btn" style="margin-left:8px;" href="visit.html">Visit the Shop</a></div>
   </div>
-  <div class="card" style="padding:0;display:flex;align-items:center;justify-content:center;">
-    <!-- Replaced static logo with a slideshow -->
+  <div class="card">
     <div class="slider" id="slider">
       <img class="slide active" src="img/slide1.jpg" alt="Featured 1">
       <img class="slide" src="img/slide2.jpg" alt="Featured 2">
@@ -124,20 +109,10 @@ document.addEventListener('click', (e)=>{
   </div>
 </div></section>
 <script>
-// Simple slider
 const slides=[...document.querySelectorAll('#slider .slide')];
-const dots=document.getElementById('dots');
-let i=0;
-slides.forEach((_,idx)=>{
-  const d=document.createElement('button');
-  d.className='dot'+(idx===0?' active':'');
-  d.addEventListener('click',()=>show(idx));
-  dots.appendChild(d);
-});
-function show(n){
-  slides[i].classList.remove('active'); dots.children[i].classList.remove('active');
-  i=n; slides[i].classList.add('active'); dots.children[i].classList.add('active');
-}
+const dots=document.getElementById('dots'); let i=0;
+slides.forEach((_,idx)=>{ const d=document.createElement('button'); d.className='dot'+(idx===0?' active':''); d.addEventListener('click',()=>show(idx)); dots.appendChild(d); });
+function show(n){ slides[i].classList.remove('active'); dots.children[i].classList.remove('active'); i=n; slides[i].classList.add('active'); dots.children[i].classList.add('active'); }
 setInterval(()=>show((i+1)%slides.length), 4000);
 </script>
 
@@ -152,7 +127,7 @@ setInterval(()=>show((i+1)%slides.length), 4000);
 
 <footer><div class="container"><div class="card inner">
   <div class="grid grid-2">
-    <div><div class="brand"><img src="img/logo.png" alt="Route 420" style="height:28px;"> <span>Premium Glass</span></div>
+    <div><div class="brand"><span>Premium Glass</span></div>
       <div class="muted">Nicotine Vapes/Pouches • THCa Flower • Edibles • Disposables</div></div>
     <div class="muted">
       <div>21+ Only. Valid Drivers License/ID required for Sale.</div>
