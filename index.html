@@ -54,6 +54,28 @@ btn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem('ro
 })();
 </script>
 
+  <!-- 3×1 Featured Cards -->
+<section class="section">
+  <div class="container grid grid-3">
+    <a class="card home-card" href="gallery.html#bongs" aria-label="Bongs">
+      <img class="home-card-img" src="img/bongs.jpg" alt="Bongs" loading="lazy">
+    </a>
+    <a class="card home-card" href="gallery.html#dry-bowls" aria-label="Dry Bowls">
+      <img class="home-card-img" src="img/drybowl.jpg" alt="Dry Bowls (Spoons)" loading="lazy">
+    </a>
+    <a class="card home-card" href="brands.html#puffco" aria-label="PuffCo">
+      <img class="home-card-img" src="img/the-new-peak-pro.jpg" alt="PuffCo" loading="lazy">
+    </a>
+  </div>
+</section>
+
+<style>
+  .home-card{ padding:0; overflow:hidden; }
+  .home-card-img{ width:100%; height:100%; display:block; object-fit:cover; }
+  @media (min-width:861px){ .home-card{ height:280px; } }
+  @media (max-width:860px){ .home-card{ height:220px; } }
+</style>
+
 <div class="drawer-overlay" hidden></div>
 <nav class="drawer" aria-hidden="true">
   <div class="drawer-header">
