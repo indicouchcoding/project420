@@ -1,7 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Visit — Premium Glass</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="hotfix-global.css">
 </head><body>
 <div id="ageGate" class="gate"><div class="panel"><div class="body">
   <div class="pill">21+ Only</div>
@@ -44,64 +43,7 @@ closeBtn.addEventListener('click', closeDrawer);
 overlay.addEventListener('click', closeDrawer);
 addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
 drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeDrawer));
-</script>
-<section class="section"><div class="container grid grid-2">
-  <div class="stack">
-    <div class="card" style="padding:16px;">
-      <h2>Visit Us</h2>
-      <h3 style="margin-top:10px;">2306 W Beverley St, Staunton, VA 24401</h3>
-      <p style="margin-top:6px;">
-        <a href="tel:(540) 480-9596">(540) 480-9596</a> •
-        <a href="mailto:route420llc@gmail.com">route420llc@gmail.com</a>
-      </p>
-      <div style="margin-top:10px;"><span class="pill">Mon–Sun: 10am – 8pm</span></div>
-      <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;">
-        <a class="btn" href="https://www.facebook.com/420Route/" target="_blank" rel="noopener">Facebook</a>
-        <a class="btn" href="https://instagram.com/route4twenty" target="_blank" rel="noopener">Instagram</a>
-      </div>
-    </div>
-
-    <div class="card" style="padding:16px;">
-      <h2>Contact Form</h2>
-      <p class="muted" style="margin-top:6px;">Shoot us a message — we’ll get back ASAP.</p>
-      <!-- Mailto fallback. To use a backend/service, replace action with your endpoint. -->
-      <form action="mailto:route420llc@gmail.com" method="post" enctype="text/plain" style="margin-top:10px;display:grid;gap:10px;">
-        <div style="display:grid;gap:6px;">
-          <label for="name" class="muted">Name</label>
-          <input id="name" name="Name" type="text" required
-                 style="padding:10px;border-radius:12px;border:1px solid var(--border);background:#0a0a0a;color:var(--ink);" />
-        </div>
-        <div style="display:grid;gap:6px;">
-          <label for="email" class="muted">Email</label>
-          <input id="email" name="Email" type="email" required
-                 style="padding:10px;border-radius:12px;border:1px solid var(--border);background:#0a0a0a;color:var(--ink);" />
-        </div>
-        <div style="display:grid;gap:6px;">
-          <label for="phone" class="muted">Phone (optional)</label>
-          <input id="phone" name="Phone" type="tel"
-                 style="padding:10px;border-radius:12px;border:1px solid var(--border);background:#0a0a0a;color:var(--ink);" />
-        </div>
-        <div style="display:grid;gap:6px;">
-          <label for="message" class="muted">Message</label>
-          <textarea id="message" name="Message" rows="5" required
-                    style="padding:10px;border-radius:12px;border:1px solid var(--border);background:#0a0a0a;color:var(--ink);resize:vertical;"></textarea>
-        </div>
-        <button class="btn" type="submit">Send</button>
-      </form>
-      <p class="muted" style="margin-top:8px;font-size:12px;">Tip: If nothing happens on submit, your device might block mail apps. I can wire this to Formspree or your backend on request.</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <iframe style="width:100%;height:420px;" src="https://www.google.com/maps?q=2306%20W%20Beverley%20St,%20Staunton,%20VA%2024401&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map"></iframe>
-  </div>
-</div></section>
-
-<style>
-/* Small helper to stack the two left cards with space between */
-.stack{display:grid;gap:16px}
-</style>
-
+</script><section class="section"><div class="container"><h2>Visit</h2><p class="muted">Content goes here.</p></div></section>
 <footer><div class="container"><div class="card inner">
   <div class="grid grid-2">
     <div><div class="brand"><img src="img/logo.png" alt="Route 420" style="height:28px;"> <span>Premium Glass</span></div>
@@ -111,4 +53,13 @@ drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeDrawer)
       <div style="margin-top:6px;">All Products are Compliant with applicable VA State Laws. THCa/Hemp Derived Products are not for Sale where Prohibited.</div>
     </div>
   </div><hr><div class="muted">© 2025 Route 420 LLC. All rights reserved.</div></div></div></footer>
+
+<style>
+/* Map sizing tweaks */
+.map-card{padding:0; overflow:hidden;}
+.map-frame{width:100%; height:320px; display:block; border:0;}
+@media (max-width:860px){
+  .map-frame{height:260px;}
+}
+</style>
 </body></html>
