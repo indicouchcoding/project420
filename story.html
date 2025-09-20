@@ -1,113 +1,18 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang='en'><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How We Rolled Up — Premium Glass</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
-<style>
-/* dropdown nav additions to match Home */
-.nav .menu{position:relative;display:inline-block}
-.nav .menu>button{background:transparent;border:0;color:inherit;font:inherit;cursor:pointer;padding:8px 10px;border-radius:10px}
-.nav .menu>button:hover{background:rgba(255,255,255,.06)}
-.nav .dropdown{position:absolute;top:100%;left:0;z-index:30;min-width:220px;background:#0a0a0a;border:1px solid #1a1a1a;border-radius:12px;padding:8px;display:none}
-.nav .dropdown a{display:block;padding:8px 10px;border-radius:8px}
-.nav .dropdown a:hover{background:#111}
-.nav .menu.open .dropdown{display:block}
-/* keep dropdowns above content */
-.header{z-index:50}
-/* remove footer logo image, keep text */
-footer .brand img{display:none}
-</style>
+<title>Story — Premium Glass</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="hotfix-global.css">
 </head><body>
-<div id="ageGate" class="gate"><div class="panel"><div class="chrome"></div>
-  <div class="body">
-    <div class="pill">21+ Only</div>
-    <h2 style="margin:6px 0 2px;">Welcome to Premium Glass</h2>
-    <p class="muted" style="margin:6px 0 8px;">By entering, you confirm you are at least 21 years old.</p>
-    <div class="joint"><div class="smoke"><span></span><span></span><span></span></div></div>
-    <label class="remember"><input id="rememberGate" type="checkbox"> Don't show again</label>
-    <button id="gateEnter" class="btn" style="margin-top:10px;">Enter</button>
-    <div style="margin-top:10px;"><a class="muted" href="https://www.responsibility.org/">Exit</a></div>
-  </div></div></div>
-<script>
-const gate=document.getElementById('ageGate');
-const btn=document.getElementById('gateEnter');
-const remember=document.getElementById('rememberGate');
-if(localStorage.getItem('route420_age_ok')==='yes') gate.classList.add('hidden');
-btn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem('route420_age_ok','yes'); gate.classList.add('hidden'); });
-</script>
-
 <header class="header">
   <div class="container bar">
-    <!-- page name next to logo -->
-    <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"><span>How We Rolled Up</span></a>
+    <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"></a>
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-
-    <!-- UPDATED NAV with dropdowns -->
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="drops.html">Fresh Drops</a>
-
-      <div class="menu">
-        <button type="button">Glass Gallery ▾</button>
-        <div class="dropdown">
-          <a href="gallery.html#bongs">Bongs</a>
-          <a href="gallery.html#dry-bowls">Dry Bowls</a>
-          <a href="gallery.html#slides">Bowl Slides</a>
-          <a href="gallery.html#stems">Stems</a>
-        </div>
-      </div>
-
-      <div class="menu">
-        <button type="button">Updates/Blogs ▾</button>
-        <div class="dropdown">
-          <a href="updates.html#updates">Updates</a>
-          <a href="updates.html#blogs">Blogs</a>
-          <a href="updates.html#archives">Archives</a>
-        </div>
-      </div>
-
-      <div class="menu">
-        <button type="button">Brands Carried ▾</button>
-        <div class="dropdown">
-          <a href="brands.html#grav">GRAV</a>
-          <a href="brands.html#zong">ZONG</a>
-          <a href="brands.html#puffco">PuffCo</a>
-          <a href="brands.html#focusv">Focus V</a>
-          <a href="brands.html#more">More...</a>
-        </div>
-      </div>
-
-      <a href="artists.html">Local Artists</a>
-      <a href="reviews.html">Reviews</a>
-      <a href="crew.html">Crew</a>
-      <a class="active" href="story.html">How We Rolled Up</a>
+      <div class="menu"><button type="button">Glass Gallery ▾</button><div class="dropdown"><a href="#">Bongs</a></div></div>
       <a href="visit.html">Visit</a>
     </nav>
   </div>
 </header>
-<script>
-// mobile hamburger toggle (uses your .nav.open pattern)
-const btnMenu=document.querySelector('.menu-btn'); const nav=document.querySelector('.nav');
-btnMenu.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btnMenu.setAttribute('aria-expanded', open?'true':'false'); });
-// dropdown open/close like Home
-document.querySelectorAll('.nav .menu>button').forEach(b=>b.addEventListener('click',(e)=>{
-  const m=e.currentTarget.parentElement; m.classList.toggle('open');
-  document.querySelectorAll('.nav .menu').forEach(x=>{ if(x!==m) x.classList.remove('open'); });
-  e.stopPropagation();
-}));
-document.addEventListener('click',(e)=>{ if(!e.target.closest('.nav .menu')) document.querySelectorAll('.nav .menu').forEach(m=>m.classList.remove('open')); });
-</script>
-
-<section class="section"><div class="container">
-  <h2>How We Rolled Up</h2>
-  <p class="muted" style="margin-top:6px;">Locally owned and proudly rooted in the community, Route 420 offers quality glass, smoking accessories, and a relaxed, welcoming vibe. Whether you’re a regular or just passing through, we’re here to elevate your experience!</p>
-</div></section>
-
-<footer><div class="container"><div class="card inner">
-  <div class="grid grid-2">
-    <div><div class="brand"><span>Premium Glass</span></div>
-      <div class="muted">Premium Glass • THCa Flower • Edibles • Disposables</div></div>
-    <div class="muted">
-      <div>21+ Only. Valid Drivers License/ID required for Sale.</div>
-      <div style="margin-top:6px;">All Products are Compliant with applicable VA State Laws. THCa/Hemp Derived Products are not for Sale where Prohibited. All Products are Legal under the 2018 Farm Bill Act.</div>
-    </div>
-  </div><hr><div class="muted">© 2025 Route 420 LLC. All rights reserved.</div></div></div></footer>
 </body></html>

@@ -1,123 +1,18 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang='en'><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reviews — Premium Glass</title>
-<link rel="icon" href="img/logo.png">
-<link rel="stylesheet" href="styles.css">
-<style>
-/* dropdown nav additions to match Home */
-.nav .menu{position:relative;display:inline-block}
-.nav .menu>button{background:transparent;border:0;color:inherit;font:inherit;cursor:pointer;padding:8px 10px;border-radius:10px}
-.nav .menu>button:hover{background:rgba(255,255,255,.06)}
-.nav .dropdown{position:absolute;top:100%;left:0;z-index:30;min-width:220px;background:#0a0a0a;border:1px solid #1a1a1a;border-radius:12px;padding:8px;display:none}
-.nav .dropdown a{display:block;padding:8px 10px;border-radius:8px}
-.nav .dropdown a:hover{background:#111}
-.nav .menu.open .dropdown{display:block}
-/* keep dropdowns above content */
-.header{z-index:50}
-
-.review-card{background:#0a0a0a;border:1px solid #1a1a1a;border-radius:16px;padding:16px}
-.stars{letter-spacing:1px}
-.loadwrap{display:flex;justify-content:center;margin-top:12px}
-</style>
+<title>Reviews — Premium Glass</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="hotfix-global.css">
 </head><body>
 <header class="header">
   <div class="container bar">
-    <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"><span>Reviews</span></a>
+    <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"></a>
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="drops.html">Fresh Drops</a>
-      <div class="menu"><button type="button">Glass Gallery ▾</button>
-        <div class="dropdown">
-          <a href="gallery.html#bongs">Bongs</a>
-          <a href="gallery.html#dry-bowls">Dry Bowls</a>
-          <a href="gallery.html#slides">Bowl Slides</a>
-          <a href="gallery.html#stems">Stems</a>
-        </div>
-      </div>
-      <div class="menu"><button type="button">Updates/Blogs ▾</button>
-        <div class="dropdown">
-          <a href="updates.html#updates">Updates</a>
-          <a href="updates.html#blogs">Blogs</a>
-          <a href="updates.html#archives">Archives</a>
-        </div>
-      </div>
-      <div class="menu"><button type="button">Brands Carried ▾</button>
-        <div class="dropdown">
-          <a href="brands.html#grav">GRAV</a>
-          <a href="brands.html#zong">ZONG</a>
-          <a href="brands.html#puffco">PuffCo</a>
-          <a href="brands.html#focusv">Focus V</a>
-          <a href="brands.html#more">More...</a>
-        </div>
-      </div>
-      <a href="artists.html">Local Artists</a>
-      <a class="active" href="reviews.html">Reviews</a>
-      <a href="crew.html">Crew</a>
-      <a href="story.html">How We Rolled Up</a>
+      <div class="menu"><button type="button">Glass Gallery ▾</button><div class="dropdown"><a href="#">Bongs</a></div></div>
       <a href="visit.html">Visit</a>
     </nav>
   </div>
 </header>
-<script>
-// mobile hamburger toggle (uses your .nav.open pattern)
-const btn=document.querySelector('.menu-btn'); const nav=document.querySelector('.nav');
-btn.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); });
-// dropdown open/close like Home
-document.querySelectorAll('.menu>button').forEach(b=>b.addEventListener('click',(e)=>{
-  const m=e.currentTarget.parentElement; m.classList.toggle('open');
-  document.querySelectorAll('.menu').forEach(x=>{ if(x!==m) x.classList.remove('open'); });
-  e.stopPropagation();
-}));
-document.addEventListener('click',(e)=>{ if(!e.target.closest('.menu')) document.querySelectorAll('.menu').forEach(m=>m.classList.remove('open')); });
-</script>
-
-<section class="section"><div class="container">
-  <h2>Reviews</h2>
-  <div id="reviewsGrid" class="grid grid-3" style="margin-top:14px;"></div>
-  <div class="loadwrap"><button id="loadMore" class="btn">Load more</button></div>
-
-  <div class="card inner" style="margin-top:16px;">
-    <p><a class="btn" href="https://www.google.com/search?q=Route+420+Reviews" target="_blank" rel="noopener">View Google Reviews</a>
-    <a class="btn" style="margin-left:8px;" href="https://www.facebook.com/420Route/reviews" target="_blank" rel="noopener">View Facebook Reviews</a></p>
-  </div>
-</div></section>
-
-<footer><div class="container"><div class="card inner">
-  <div class="grid grid-2">
-    <div><div class="brand"><span>Premium Glass</span></div>
-      <div class="muted">Nicotine Vapes/Pouches • THCa Flower • Edibles • Disposables</div></div>
-    <div class="muted">
-      <div>21+ Only. Valid Drivers License/ID required for Sale.</div>
-      <div style="margin-top:6px;">All Products are Compliant with applicable VA State Laws. THCa/Hemp Derived Products are not for Sale where Prohibited. All Products are Legal under the 2018 Farm Bill Act.</div>
-    </div>
-  </div><hr><div class="muted">© 2025 Route 420 LLC. All rights reserved.</div></div></div></footer>
-
-<script>
-const reviewsData = [
-  {stars:5, text:"Hands down best shop in town!", source:"Facebook"},
-  {stars:5, text:"Friendly, knowledgeable staff. Great selection.", source:"Google"},
-  {stars:5, text:"Helped me pick the perfect setup.", source:"Google"},
-  {stars:5, text:"Clean shop and fair prices — will return.", source:"Facebook"},
-  {stars:5, text:"Super chill vibes and quality glass.", source:"Google"},
-  {stars:5, text:"My go-to spot in Staunton.", source:"Google"},
-  {stars:5, text:"Found exactly what I needed fast.", source:"Facebook"},
-  {stars:5, text:"Top-tier glass and accessories.", source:"Google"}
-];
-let shown=0; const step=6;
-const grid=document.getElementById('reviewsGrid');
-const more=document.getElementById('loadMore');
-function render(){
-  for(let i=shown;i<Math.min(shown+step,reviewsData.length);i++){
-    const r=reviewsData[i];
-    const el=document.createElement('article'); el.className='review-card';
-    el.innerHTML = `<div class="stars">${'★'.repeat(r.stars)}</div>
-      <p class="muted">“${r.text}”</p><p class="muted" style="font-size:12px;">— ${r.source}</p>`;
-    grid.appendChild(el);
-  }
-  shown=Math.min(shown+step,reviewsData.length);
-  if(shown>=reviewsData.length) more.style.display='none';
-}
-more.addEventListener('click',render); render();
-</script>
 </body></html>

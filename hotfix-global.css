@@ -1,0 +1,7 @@
+/* Minimal hotfix recreated (Bebas optional if present) */
+.header .brand span{ display:none !important; }
+.header{ position:sticky; top:0; z-index:1000; }
+.header .nav{ position:relative; z-index:2; gap:10px; white-space:nowrap; overflow-x:auto; }
+.nav .dropdown{ z-index:1200 !important; position:absolute; top:100%; left:0; }
+.header .brand img{ height:56px; }
+@media (max-width:860px){ .header .brand img{ height:48px; } }
