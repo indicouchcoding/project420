@@ -63,8 +63,28 @@ closeBtn.addEventListener('click', closeDrawer);
 overlay.addEventListener('click', closeDrawer);
 addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
 drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeDrawer));
-</script><section class="section"><div class="container"><h2>How We Rolled Up</h2><p class="muted">Content goes here.</p></div></section>
-<footer><div class="container"><div class="card inner">
+</script><section class="section"><div class="container"><h2>How We Rolled Up</h2><p
+
+<!-- Backstory box -->
+<div class="card story-box">
+  <div style="padding:16px;">
+    <p class="muted">
+      (Add your shop’s backstory here — origins, mission, community vibes, the whole journey.)
+    </p>
+  </div>
+</div>
+
+<!-- Optional: tiny polish for size; paste once on the page -->
+<style>
+  .story-box{
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:#0a0a0a;
+    min-height:220px; /* adjust height as you like */
+  }
+</style>
+                                                                                                                                                                        
+ <footer><div class="container"><div class="card inner">
   <div class="grid grid-2">
     <div><div class="brand"><img src="img/logo.png" alt="Route 420" style="height:28px;"> <span>Premium Glass</span></div>
       <div class="muted">Premium Glass • THCa Flower • Edibles • Disposables</div></div>
