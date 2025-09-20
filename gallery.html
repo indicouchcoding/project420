@@ -44,8 +44,92 @@ closeBtn.addEventListener('click', closeDrawer);
 overlay.addEventListener('click', closeDrawer);
 addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
 drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeDrawer));
-</script><section class="section"><div class="container"><h2>Glass Gallery</h2><p class="muted">Content goes here.</p></div></section>
-<footer><div class="container"><div class="card inner">
+</script><section class="section"><div class="container"><h2>Our Premium Hand Picked Selection</h2><p
+
+  <!-- Horizontal 10×1 Gallery -->
+<section class="section">
+  <div class="container">
+    <h2 style="margin-bottom:10px;">Featured Gallery</h2>
+
+    <div class="hscroll-gallery" tabindex="0" aria-label="Scrollable glass gallery">
+      <!-- Card 1 -->
+      <a class="card hcard" href="#bongs" aria-label="Bongs">
+        <img src="img/gallery01.jpg" alt="Glass piece 1" loading="lazy">
+      </a>
+      <!-- Card 2 -->
+      <a class="card hcard" href="#dry-bowls" aria-label="Dry Bowls">
+        <img src="img/gallery02.jpg" alt="Glass piece 2" loading="lazy">
+      </a>
+      <!-- Card 3 -->
+      <a class="card hcard" href="#slides" aria-label="Slides">
+        <img src="img/gallery03.jpg" alt="Glass piece 3" loading="lazy">
+      </a>
+      <!-- Card 4 -->
+      <a class="card hcard" href="#stems" aria-label="Stems">
+        <img src="img/gallery04.jpg" alt="Glass piece 4" loading="lazy">
+      </a>
+      <!-- Card 5 -->
+      <a class="card hcard" href="#bongs" aria-label="Bongs">
+        <img src="img/gallery05.jpg" alt="Glass piece 5" loading="lazy">
+      </a>
+      <!-- Card 6 -->
+      <a class="card hcard" href="#dry-bowls" aria-label="Dry Bowls">
+        <img src="img/gallery06.jpg" alt="Glass piece 6" loading="lazy">
+      </a>
+      <!-- Card 7 -->
+      <a class="card hcard" href="#slides" aria-label="Slides">
+        <img src="img/gallery07.jpg" alt="Glass piece 7" loading="lazy">
+      </a>
+      <!-- Card 8 -->
+      <a class="card hcard" href="#stems" aria-label="Stems">
+        <img src="img/gallery08.jpg" alt="Glass piece 8" loading="lazy">
+      </a>
+      <!-- Card 9 -->
+      <a class="card hcard" href="#bongs" aria-label="Bongs">
+        <img src="img/gallery09.jpg" alt="Glass piece 9" loading="lazy">
+      </a>
+      <!-- Card 10 -->
+      <a class="card hcard" href="#dry-bowls" aria-label="Dry Bowls">
+        <img src="img/gallery10.jpg" alt="Glass piece 10" loading="lazy">
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Scoped to gallery.html */
+  .hscroll-gallery{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(80%, 320px);
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .hscroll-gallery:focus { outline: none; }
+
+  .hscroll-gallery::-webkit-scrollbar{ height: 8px; }
+  .hscroll-gallery::-webkit-scrollbar-thumb{
+    background:#222; border-radius: 999px; border:1px solid #1a1a1a;
+  }
+  .hscroll-gallery::-webkit-scrollbar-track{ background:#0a0a0a; }
+
+  .hcard{
+    padding: 0; overflow: hidden; scroll-snap-align: start;
+  }
+  .hcard img{
+    width: 100%; height: 220px; display: block; object-fit: cover;
+  }
+
+  @media (min-width: 861px){
+    .hscroll-gallery{ grid-auto-columns: 360px; }
+    .hcard img{ height: 260px; }
+  }
+</style>
+  
+  <footer><div class="container"><div class="card inner">
   <div class="grid grid-2">
     <div><div class="brand"><img src="img/logo.png" alt="Route 420" style="height:28px;"> <span>Premium Glass</span></div>
       <div class="muted">Premium Glass • THCa Flower • Edibles • Disposables</div></div>
