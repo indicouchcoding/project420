@@ -48,82 +48,211 @@ drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeDrawer)
 
 <section class="section">
   <div class="container">
-    <h2>Brands Carried</h2>
-    <p class="muted">Content goes here.</p>
+    <h2 style="margin-bottom:10px;">Featured Brands</h2>
 
-    <!-- 3×1 Featured Brand Cards -->
-    <div class="grid grid-3" style="margin-top:14px;">
-      <a class="card brand-card" href="#grav" aria-label="GRAV">
-        <img class="brand-card-img" src="img/placeholder-1.jpg" alt="GRAV (placeholder)" loading="lazy">
+    <!-- Horizontal 10×1 strip -->
+    <div class="hscroll-brands" tabindex="0" aria-label="Scrollable featured brands">
+      <a class="card bcard" href="#grav" aria-label="GRAV">
+        <img src="img/placeholder-1.jpg" alt="GRAV (placeholder)" loading="lazy">
       </a>
-      <a class="card brand-card" href="#puffco" aria-label="PuffCo">
-        <img class="brand-card-img" src="img/placeholder-2.jpg" alt="PuffCo (placeholder)" loading="lazy">
+      <a class="card bcard" href="#puffco" aria-label="PuffCo">
+        <img src="img/placeholder-2.jpg" alt="PuffCo (placeholder)" loading="lazy">
       </a>
-      <a class="card brand-card" href="#zong" aria-label="ZONG">
-        <img class="brand-card-img" src="img/placeholder-3.jpg" alt="ZONG (placeholder)" loading="lazy">
+      <a class="card bcard" href="#zong" aria-label="ZONG">
+        <img src="img/placeholder-3.jpg" alt="ZONG (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#focusv" aria-label="Focus V">
+        <img src="img/placeholder-4.jpg" alt="Focus V (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#more" aria-label="More">
+        <img src="img/placeholder-5.jpg" alt="More (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand6" aria-label="Brand 6">
+        <img src="img/placeholder-6.jpg" alt="Brand 6 (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand7" aria-label="Brand 7">
+        <img src="img/placeholder-7.jpg" alt="Brand 7 (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand8" aria-label="Brand 8">
+        <img src="img/placeholder-8.jpg" alt="Brand 8 (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand9" aria-label="Brand 9">
+        <img src="img/placeholder-9.jpg" alt="Brand 9 (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand10" aria-label="Brand 10">
+        <img src="img/placeholder-10.jpg" alt="Brand 10 (placeholder)" loading="lazy">
       </a>
     </div>
   </div>
 </section>
 
 <style>
-  /* scoped to this page */
-  .brand-card{ padding:0; overflow:hidden; }
-  .brand-card-img{ width:100%; height:100%; display:block; object-fit:cover; }
-  @media (min-width:861px){ .brand-card{ height:240px; } }
-  @media (max-width:860px){ .brand-card{ height:200px; } }
+  /* Scoped to brands.html */
+  .hscroll-brands{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(80%, 320px); /* mobile size of each card */
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .hscroll-brands:focus { outline: none; }
+  .hscroll-brands::-webkit-scrollbar{ height: 8px; }
+  .hscroll-brands::-webkit-scrollbar-thumb{
+    background:#222; border-radius:999px; border:1px solid #1a1a1a;
+  }
+  .hscroll-brands::-webkit-scrollbar-track{ background:#0a0a0a; }
+
+  .bcard{ padding:0; overflow:hidden; scroll-snap-align: start; }
+  .bcard img{ width:100%; height:220px; display:block; object-fit:cover; }
+
+  @media (min-width:861px){
+    .hscroll-brands{ grid-auto-columns: 360px; } /* desktop size of each card */
+    .bcard img{ height:260px; }
+  }
 </style>
+
 
 <!-- Featured Brand Cards (place this after the existing Brands grid) -->
 <section class="section">
   <div class="container">
     <h2 style="margin-bottom:10px;">Featured Brands</h2>
-    <div class="grid grid-3">
-      <a class="card brand-card" href="#grav" aria-label="GRAV">
-        <img class="brand-card-img" src="img/placeholder-1.jpg" alt="GRAV (placeholder)" loading="lazy">
+
+    <!-- Horizontal 10×1 strip -->
+    <div class="hscroll-brands" tabindex="0" aria-label="Scrollable featured brands">
+      <a class="card bcard" href="#grav" aria-label="GRAV">
+        <img src="img/placeholder-1.jpg" alt="GRAV (placeholder)" loading="lazy">
       </a>
-      <a class="card brand-card" href="#puffco" aria-label="PuffCo">
-        <img class="brand-card-img" src="img/placeholder-2.jpg" alt="PuffCo (placeholder)" loading="lazy">
+      <a class="card bcard" href="#puffco" aria-label="PuffCo">
+        <img src="img/placeholder-2.jpg" alt="PuffCo (placeholder)" loading="lazy">
       </a>
-      <a class="card brand-card" href="#zong" aria-label="ZONG">
-        <img class="brand-card-img" src="img/placeholder-3.jpg" alt="ZONG (placeholder)" loading="lazy">
+      <a class="card bcard" href="#zong" aria-label="ZONG">
+        <img src="img/placeholder-3.jpg" alt="ZONG (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#focusv" aria-label="Focus V">
+        <img src="img/placeholder-4.jpg" alt="Focus V (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#more" aria-label="More">
+        <img src="img/placeholder-5.jpg" alt="More (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand6" aria-label="Brand 6">
+        <img src="img/placeholder-6.jpg" alt="Brand 6 (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand7" aria-label="Brand 7">
+        <img src="img/placeholder-7.jpg" alt="Brand 7 (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand8" aria-label="Brand 8">
+        <img src="img/placeholder-8.jpg" alt="Brand 8 (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand9" aria-label="Brand 9">
+        <img src="img/placeholder-9.jpg" alt="Brand 9 (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand10" aria-label="Brand 10">
+        <img src="img/placeholder-10.jpg" alt="Brand 10 (placeholder)" loading="lazy">
       </a>
     </div>
   </div>
 </section>
 
 <style>
-  /* Scoped to brands.html only */
-  .brand-card{ padding:0; overflow:hidden; }
-  .brand-card-img{ width:100%; height:100%; display:block; object-fit:cover; }
-  @media (min-width:861px){ .brand-card{ height:240px; } }
-  @media (max-width:860px){ .brand-card{ height:200px; } }
+  /* Scoped to brands.html */
+  .hscroll-brands{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(80%, 320px); /* mobile size of each card */
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .hscroll-brands:focus { outline: none; }
+  .hscroll-brands::-webkit-scrollbar{ height: 8px; }
+  .hscroll-brands::-webkit-scrollbar-thumb{
+    background:#222; border-radius:999px; border:1px solid #1a1a1a;
+  }
+  .hscroll-brands::-webkit-scrollbar-track{ background:#0a0a0a; }
+
+  .bcard{ padding:0; overflow:hidden; scroll-snap-align: start; }
+  .bcard img{ width:100%; height:220px; display:block; object-fit:cover; }
+
+  @media (min-width:861px){
+    .hscroll-brands{ grid-auto-columns: 360px; } /* desktop size of each card */
+    .bcard img{ height:260px; }
+  }
 </style>
 
- <section class="section">
+
+<section class="section">
   <div class="container">
     <h2 style="margin-bottom:10px;">Featured Brands</h2>
-    <div class="grid grid-3">
-      <a class="card brand-card" href="#grav" aria-label="GRAV">
-        <img class="brand-card-img" src="img/placeholder-1.jpg" alt="GRAV (placeholder)" loading="lazy">
+
+    <!-- Horizontal 10×1 strip -->
+    <div class="hscroll-brands" tabindex="0" aria-label="Scrollable featured brands">
+      <a class="card bcard" href="#grav" aria-label="GRAV">
+        <img src="img/placeholder-1.jpg" alt="GRAV (placeholder)" loading="lazy">
       </a>
-      <a class="card brand-card" href="#puffco" aria-label="PuffCo">
-        <img class="brand-card-img" src="img/placeholder-2.jpg" alt="PuffCo (placeholder)" loading="lazy">
+      <a class="card bcard" href="#puffco" aria-label="PuffCo">
+        <img src="img/placeholder-2.jpg" alt="PuffCo (placeholder)" loading="lazy">
       </a>
-      <a class="card brand-card" href="#zong" aria-label="ZONG">
-        <img class="brand-card-img" src="img/placeholder-3.jpg" alt="ZONG (placeholder)" loading="lazy">
+      <a class="card bcard" href="#zong" aria-label="ZONG">
+        <img src="img/placeholder-3.jpg" alt="ZONG (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#focusv" aria-label="Focus V">
+        <img src="img/placeholder-4.jpg" alt="Focus V (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#more" aria-label="More">
+        <img src="img/placeholder-5.jpg" alt="More (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand6" aria-label="Brand 6">
+        <img src="img/placeholder-6.jpg" alt="Brand 6 (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand7" aria-label="Brand 7">
+        <img src="img/placeholder-7.jpg" alt="Brand 7 (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand8" aria-label="Brand 8">
+        <img src="img/placeholder-8.jpg" alt="Brand 8 (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand9" aria-label="Brand 9">
+        <img src="img/placeholder-9.jpg" alt="Brand 9 (placeholder)" loading="lazy">
+      </a>
+      <a class="card bcard" href="#brand10" aria-label="Brand 10">
+        <img src="img/placeholder-10.jpg" alt="Brand 10 (placeholder)" loading="lazy">
       </a>
     </div>
   </div>
 </section>
 
 <style>
-  /* Scoped to brands.html only */
-  .brand-card{ padding:0; overflow:hidden; }
-  .brand-card-img{ width:100%; height:100%; display:block; object-fit:cover; }
-  @media (min-width:861px){ .brand-card{ height:240px; } }
-  @media (max-width:860px){ .brand-card{ height:200px; } }
-</style> 
+  /* Scoped to brands.html */
+  .hscroll-brands{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(80%, 320px); /* mobile size of each card */
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .hscroll-brands:focus { outline: none; }
+  .hscroll-brands::-webkit-scrollbar{ height: 8px; }
+  .hscroll-brands::-webkit-scrollbar-thumb{
+    background:#222; border-radius:999px; border:1px solid #1a1a1a;
+  }
+  .hscroll-brands::-webkit-scrollbar-track{ background:#0a0a0a; }
+
+  .bcard{ padding:0; overflow:hidden; scroll-snap-align: start; }
+  .bcard img{ width:100%; height:220px; display:block; object-fit:cover; }
+
+  @media (min-width:861px){
+    .hscroll-brands{ grid-auto-columns: 360px; } /* desktop size of each card */
+    .bcard img{ height:260px; }
+  }
+</style>
+ 
   
   
   <footer><div class="container"><div class="card inner">
