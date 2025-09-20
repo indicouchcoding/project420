@@ -3,18 +3,37 @@
 <title>How We Rolled Up — Premium Glass</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="hotfix-global.css">
 </head><body>
-<div id="ageGate" class="gate"><div class="panel"><div class="body">
-  <div class="pill">21+ Only</div>
-  <h2>Welcome to Premium Glass</h2>
-  <label style="display:flex;gap:8px;justify-content:center;margin-top:8px;"><input id="rememberGate" type="checkbox"> Don't show again</label>
-  <button id="gateEnter" class="btn" style="margin-top:10px;">Enter</button>
-</div></div></div>
+<div id="ageGate" class="gate">
+  <div class="panel">
+    <div class="body">
+      <h2 class="title">Welcome to Route 420</h2>
+      <p class="muted">By entering this site, you are confirming you are at least 21 years of age.</p>
+      <label class="remember"><input id="rememberGate" type="checkbox"> Don't show again</label>
+      <button id="gateEnter" class="btn">Enter</button>
+    </div>
+  </div>
+</div>
+<style>
+  .gate{position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.92);display:grid;place-items:center}
+  .gate.hidden{display:none}
+  .gate .panel{width:min(560px,92vw);border:1px solid #1a1a1a;border-radius:20px;background:#0a0a0a;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+  .gate .body{padding:24px;text-align:center}
+  .gate .title{margin:0 0 8px 0;font-family:'Bungee',sans-serif}
+  .gate .remember{display:flex;gap:8px;justify-content:center;align-items:center;margin:12px 0;color:#bdbdbd}
+  .gate .btn{margin-top:10px}
+  .gate .btn:hover{filter:brightness(1.1)}
+</style>
 <script>
-const gate=document.getElementById('ageGate');
-const btn=document.getElementById('gateEnter');
-const remember=document.getElementById('rememberGate');
-if(localStorage.getItem('route420_age_ok')==='yes') gate.classList.add('hidden');
-btn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem('route420_age_ok','yes'); gate.classList.add('hidden'); });
+(function(){
+  const gate=document.getElementById('ageGate');
+  const btn=document.getElementById('gateEnter');
+  const remember=document.getElementById('rememberGate');
+  if(localStorage.getItem('route420_age_ok')==='yes'){ gate.classList.add('hidden'); return; }
+  btn.addEventListener('click',()=>{
+    if(remember && remember.checked) localStorage.setItem('route420_age_ok','yes');
+    gate.classList.add('hidden');
+  });
+})();
 </script>
 
 <header class="header">
