@@ -1,7 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Home — Premium Glass</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="hotfix-global.css">
 </head><body>
 <div id="ageGate" class="gate"><div class="panel"><div class="body">
   <div class="pill">21+ Only</div>
@@ -24,36 +23,6 @@ btn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem('ro
     <nav class="nav"><a class="active" href="index.html">Home</a><a class="" href="drops.html">New Drops</a><a class="" href="gallery.html">Glass Gallery</a><a class="" href="updates.html">Updates/Blog</a><a class="" href="brands.html">Brands Carried</a><a class="" href="artists.html">Local Artists</a><a class="" href="reviews.html">Reviews</a><a class="" href="team.html">Team</a><a class="" href="story.html">How We Rolled Up</a><a class="" href="visit.html">Visit</a></nav>
   </div>
 </header>
-
-<section class="hero"><div class="bgfx"></div><div class="container inner grid grid-2">
-  <div>
-    <div class="pill">Staunton, VA</div> <span class="pill">21+</span> <span class="pill">Recreational Smoke Shop</span>
-    <h1 style="margin-top:10px;">Premium Glass</h1>
-    <p class="muted" style="margin-top:8px;">Nicotine Vapes/Pouches • THCa Flower • Edibles • Disposables</p>
-    <div style="margin-top:14px;"><a class="btn" href="drops.html">Shop New Drops</a>
-    <a class="btn" style="margin-left:8px;" href="visit.html">Visit the Shop</a></div>
-  </div>
-  <div class="card">
-    <div class="slider" id="slider">
-      <img class="slide active" src="img/slide1.jpg" alt="Featured 1">
-      <img class="slide" src="img/slide2.jpg" alt="Featured 2">
-      <img class="slide" src="img/slide3.jpg" alt="Featured 3">
-      <img class="slide" src="img/slide4.jpg" alt="Featured 4">
-      <div class="dots" id="dots"></div>
-    </div>
-  </div>
-</div></section>
-<script>
-(function(){
-  const slides=[...document.querySelectorAll('#slider .slide')];
-  if(!slides.length) return;
-  const dots=document.getElementById('dots'); let i=0;
-  slides.forEach((_,idx)=>{ const d=document.createElement('button'); d.className='dot'+(idx===0?' active':''); d.addEventListener('click',()=>show(idx)); dots.appendChild(d); });
-  function show(n){ slides[i].classList.remove('active'); dots.children[i].classList.remove('active'); i=n; slides[i].classList.add('active'); dots.children[i].classList.add('active'); }
-  setInterval(()=>show((i+1)%slides.length), 4000);
-})();
-</script>
-
 <div class="drawer-overlay" hidden></div>
 <nav class="drawer" aria-hidden="true">
   <div class="drawer-header">
@@ -78,6 +47,21 @@ drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeDrawer)
 <section class="section"><div class="container">
   <h1>Premium Glass</h1>
   <p class="muted">Tap the hamburger on mobile to open the drawer menu.</p>
+  <div class="pill-row" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;">
+    <a class="pill" href="gallery.html#bongs" aria-label="Bongs" style="display:inline-flex;align-items:center;gap:8px;">
+      <img src="img/bongs.jpg" alt="Bongs" style="width:28px;height:28px;border-radius:999px;object-fit:cover;display:block;">
+      <span>Bongs</span>
+    </a>
+    <a class="pill" href="gallery.html#dry-bowls" aria-label="Dry Bowls" style="display:inline-flex;align-items:center;gap:8px;">
+      <img src="img/drybowl.jpg" alt="Spoon (Dry Bowl)" style="width:28px;height:28px;border-radius:999px;object-fit:cover;display:block;">
+      <span>Spoons</span>
+    </a>
+    <a class="pill" href="brands.html#puffco" aria-label="PuffCo" style="display:inline-flex;align-items:center;gap:8px;">
+      <img src="img/the-new-peak-pro.jpg" alt="PuffCo" style="width:28px;height:28px;border-radius:999px;object-fit:cover;display:block;">
+      <span>PuffCo</span>
+    </a>
+  </div>
+
 </div></section>
 
 <footer><div class="container"><div class="card inner">
