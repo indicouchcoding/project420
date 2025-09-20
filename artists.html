@@ -1,22 +1,10 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Local Artists — Premium Glass</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="hotfix-global.css">
-</head><body>
-<div id="ageGate" class="gate"><div class="panel"><div class="body">
-  <div class="pill">21+ Only</div>
-  <h2>Welcome to Premium Glass</h2>
-  <label style="display:flex;gap:8px;justify-content:center;margin-top:8px;"><input id="rememberGate" type="checkbox"> Don't show again</label>
-  <button id="gateEnter" class="btn" style="margin-top:10px;">Enter</button>
-</div></div></div>
-<script>
-const gate=document.getElementById('ageGate');
-const btn=document.getElementById('gateEnter');
-const remember=document.getElementById('rememberGate');
-if(localStorage.getItem('route420_age_ok')==='yes') gate.classList.add('hidden');
-btn.addEventListener('click',()=>{ if(remember.checked) localStorage.setItem('route420_age_ok','yes'); gate.classList.add('hidden'); });
-</script>
 
+<link rel="stylesheet" href="agegate.css">
+<script src="agegate.js" defer></script>
+</head><body>
 <header class="header">
   <div class="container bar">
     <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"><span>Premium Glass</span></a>

@@ -1,0 +1,114 @@
+
+/* ===== Route 420 — Sleek Age Gate ===== */
+:root{
+  --ag-bg: rgba(0,0,0,.80);
+  --ag-panel:#0a0a0a;
+  --ag-ink:#fff;
+  --ag-muted:#bdbdbd;
+  --ag-border:#1a1a1a;
+  --ag-pill-bg:#111;
+}
+
+/* Page blur/lock while gate is visible */
+html.age-locked, body.age-locked { overflow: hidden; }
+.age-blur { filter: blur(6px); transition: filter .25s ease; }
+
+/* Overlay */
+#r420-agegate{
+  position:fixed; inset:0; z-index:9999;
+  display:grid; place-items:center;
+  backdrop-filter: blur(6px);
+  background: var(--ag-bg);
+  animation: agFade .25s ease;
+}
+@keyframes agFade { from{ opacity:0 } to{ opacity:1 } }
+
+/* Panel */
+#r420-agegate .ag-panel{
+  width:min(560px,92vw);
+  position:relative;
+  border:1px solid var(--ag-border);
+  border-radius:24px;
+  background:var(--ag-panel);
+  padding:24px;
+  color:var(--ag-ink);
+  box-shadow:0 10px 40px rgba(0,0,0,.5);
+}
+
+/* Header row */
+#r420-agegate .ag-head{
+  display:flex; align-items:center; gap:10px; justify-content:center;
+}
+#r420-agegate .ag-logo{
+  width:40px; height:40px; border-radius:12px; overflow:hidden;
+  border:1px solid var(--ag-border); background:#000;
+}
+#r420-agegate .ag-logo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+#r420-agegate h2{
+  margin:6px 0 4px; font-family: 'Bungee', system-ui, sans-serif;
+  font-size:clamp(18px,3.3vw,26px);
+  text-align:center;
+}
+#r420-agegate p{ color:var(--ag-muted); margin:8px 0; text-align:center; }
+
+/* Pills */
+.ag-pill{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 12px; border-radius:999px;
+  border:1px solid var(--ag-border);
+  background: var(--ag-pill-bg);
+  color: var(--ag-muted);
+  font-size:13px; letter-spacing:.2px;
+}
+
+/* Controls */
+#r420-agegate .ag-actions{
+  display:flex; flex-direction:column; align-items:center; gap:12px; margin-top:12px;
+}
+#r420-agegate .ag-remember{
+  display:flex; align-items:center; gap:8px; color:var(--ag-muted); font-size:14px;
+}
+#r420-agegate .ag-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:12px 18px; border-radius:14px; border:1px solid var(--ag-border);
+  background:#141414; color:#fff; font-weight:800; cursor:pointer;
+}
+#r420-agegate .ag-btn:hover{ background:#191919; transform:translateY(-1px); }
+#r420-agegate .ag-links{ text-align:center; margin-top:4px; }
+#r420-agegate .ag-links a{ color:var(--ag-muted); text-decoration:none; }
+#r420-agegate .ag-links a:hover{ text-decoration:underline; }
+
+/* Key art: subtle joint w/ smoke (pill-style) */
+#r420-agegate .ag-joint{
+  width:180px; height:30px; margin:14px auto 6px; background:#fff;
+  border:2px solid #e5e5e5; border-radius:999px; position:relative;
+}
+#r420-agegate .ag-joint:before{
+  content:""; position:absolute; right:-8px; top:2px; bottom:2px; width:18px;
+  background:linear-gradient(90deg,#bbb,#444); border-radius:0 999px 999px 0;
+}
+#r420-agegate .ag-joint:after{
+  content:""; position:absolute; right:-12px; top:7px; width:10px; height:14px;
+  background:#fff; border:2px solid #333; border-left:none; border-radius:0 8px 8px 0;
+  box-shadow:-2px 0 0 0 #fff;
+}
+#r420-agegate .ag-smoke{
+  position:absolute; right:-26px; top:-12px; width:60px; height:60px; pointer-events:none;
+}
+#r420-agegate .ag-smoke span{
+  position:absolute; bottom:10px; left:10px; width:10px; height:10px;
+  border:1px solid #efefef; border-radius:50%; opacity:.6; animation:agPuff 2.4s linear infinite;
+}
+#r420-agegate .ag-smoke span:nth-child(2){ left:22px; animation-delay:.3s; }
+#r420-agegate .ag-smoke span:nth-child(3){ left:34px; animation-delay:.6s; }
+@keyframes agPuff{
+  0%{ transform:translateY(0) scale(1); opacity:.7; }
+  60%{ opacity:.3; }
+  100%{ transform:translateY(-28px) scale(1.6); opacity:0; }
+}
+
+/* Small screens */
+@media (max-width:540px){
+  #r420-agegate .ag-panel{ padding:18px; border-radius:18px; }
+}

@@ -1,53 +1,45 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Team — Route 420</title>
-<link rel="icon" href="img/logo.png">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="hotfix-global.css">
+<title>Team — Premium Glass</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
+
+<link rel="stylesheet" href="agegate.css">
+<script src="agegate.js" defer></script>
 </head><body>
 <header class="header">
   <div class="container bar">
-    <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"><span>Team</span></a>
+    <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"><span>Premium Glass</span></a>
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="drops.html">New Drops</a>
-      <a href="gallery.html">Glass Gallery</a>
-      <a href="updates.html">Updates/Blogs</a>
-      <a href="brands.html">Brands Carried</a>
-      <a href="artists.html">Local Artists</a>
-      <a href="reviews.html">Reviews</a>
-      <a class="active" href="team.html">Team</a>
-      <a href="story.html">How We Rolled Up</a>
-      <a href="visit.html">Visit</a>
-    </nav>
+    <nav class="nav"><a class="" href="index.html">Home</a><a class="" href="drops.html">New Drops</a><a class="" href="gallery.html">Glass Gallery</a><a class="" href="updates.html">Updates/Blog</a><a class="" href="brands.html">Brands Carried</a><a class="" href="artists.html">Local Artists</a><a class="" href="reviews.html">Reviews</a><a class="active" href="team.html">Team</a><a class="" href="story.html">How We Rolled Up</a><a class="" href="visit.html">Visit</a></nav>
   </div>
 </header>
-<script>
-// Simple mobile hamburger toggle (no dropdown logic needed)
-const btn=document.querySelector('.menu-btn'); const nav=document.querySelector('.nav');
-btn.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); });
-</script>
-
-<section class="section"><div class="container">
-  <h2>Your Neighborhood Smoke Shop</h2>
-  <p class="muted" style="margin-top:6px;">Real Stoners helping Real Stoners™</p>
-
-  <div class="grid grid-3" style="margin-top:14px;">
-    <div class="card"><img src="img/team-dylan-i.jpg" alt="Dylan Ingram"><div style="padding:12px;"><h3>Dylan Ingram</h3><p class="muted">Owner</p></div></div>
-    <div class="card"><img src="img/team-dylan-jerry.jpg" alt='Dylan "Jerry" Halterman'><div style="padding:12px;"><h3>Dylan “Jerry” Halterman</h3><p class="muted">Manager</p></div></div>
-    <div class="card"><img src="img/team-jacob-cobb.jpg" alt='Jacob "Cobb" Johnson'><div style="padding:12px;"><h3>Jacob “Cobb” Johnson</h3><p class="muted">Budtender / Salesperson</p></div></div>
-    <div class="card"><img src="img/team-jake-towelie.jpg" alt='Jake "Towelie" Coffey'><div style="padding:12px;"><h3>Jake “Towelie” Coffey</h3><p class="muted">Budtender / Salesperson / Social Media</p></div></div>
+<div class="drawer-overlay" hidden></div>
+<nav class="drawer" aria-hidden="true">
+  <div class="drawer-header">
+    <strong style="font-family:'Bungee',sans-serif;">Menu</strong>
+    <button class="btn drawer-close" aria-label="Close menu">Close</button>
   </div>
-</div></section>
-
+  <a class="" href="index.html">Home</a><a class="" href="drops.html">New Drops</a><a class="" href="gallery.html">Glass Gallery</a><a class="" href="updates.html">Updates/Blog</a><a class="" href="brands.html">Brands Carried</a><a class="" href="artists.html">Local Artists</a><a class="" href="reviews.html">Reviews</a><a class="active" href="team.html">Team</a><a class="" href="story.html">How We Rolled Up</a><a class="" href="visit.html">Visit</a>
+</nav>
+<script>
+const btn=document.querySelector('.menu-btn');
+const drawer=document.querySelector('.drawer');
+const overlay=document.querySelector('.drawer-overlay');
+const closeBtn=document.querySelector('.drawer-close');
+function openDrawer(){ drawer.classList.add('open'); overlay.classList.add('show'); overlay.hidden=false; document.body.classList.add('lock'); btn.setAttribute('aria-expanded','true'); drawer.setAttribute('aria-hidden','false'); }
+function closeDrawer(){ drawer.classList.remove('open'); overlay.classList.remove('show'); document.body.classList.remove('lock'); btn.setAttribute('aria-expanded','false'); drawer.setAttribute('aria-hidden','true'); setTimeout(()=>overlay.hidden=true,200); }
+btn.addEventListener('click', openDrawer);
+closeBtn.addEventListener('click', closeDrawer);
+overlay.addEventListener('click', closeDrawer);
+addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeDrawer));
+</script><section class="section"><div class="container"><h2>Team</h2><p class="muted">Content goes here.</p></div></section>
 <footer><div class="container"><div class="card inner">
   <div class="grid grid-2">
-    <div><div class="brand"><span>Premium Glass</span></div>
-      <div class="muted">Nicotine Vapes/Pouches • THCa Flower • Edibles • Disposables</div></div>
+    <div><div class="brand"><img src="img/logo.png" alt="Route 420" style="height:28px;"> <span>Premium Glass</span></div>
+      <div class="muted">Premium Glass • THCa Flower • Edibles • Disposables</div></div>
     <div class="muted">
       <div>21+ Only. Valid Drivers License/ID required for Sale.</div>
-      <div style="margin-top:6px;">All Products are Compliant with applicable VA State Laws. THCa/Hemp Derived Products are not for Sale where Prohibited. All Products are Legal under the 2018 Farm Bill Act.</div>
+      <div style="margin-top:6px;">All Products are Compliant with applicable VA State Laws. THCa/Hemp Derived Products are not for Sale where Prohibited.</div>
     </div>
   </div><hr><div class="muted">© 2025 Route 420 LLC. All rights reserved.</div></div></div></footer>
 </body></html>
