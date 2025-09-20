@@ -1,10 +1,9 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Team — Premium Glass</title>
-<link rel="icon" href="img/logo.png">
-<link rel="stylesheet" href="styles.css">
+<title>Crew — Route 420</title><link rel="icon" href="img/logo.png"><link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="hotfix-global.css">
-</head><body>
+</head>
+<body>
 <header class="header">
   <div class="container bar">
     <a class="brand" href="index.html"><img src="img/logo.png" alt="Logo"><span>Team</span></a>
@@ -12,9 +11,33 @@
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="drops.html">Fresh Drops</a>
+      <div class="menu"><button type="button">Glass Gallery ▾</button>
+        <div class="dropdown">
+          <a href="gallery.html#bongs">Bongs</a>
+          <a href="gallery.html#dry-bowls">Dry Bowls</a>
+          <a href="gallery.html#slides">Bowl Slides</a>
+          <a href="gallery.html#stems">Stems</a>
+        </div>
+      </div>
+      <div class="menu"><button type="button">Updates/Blogs ▾</button>
+        <div class="dropdown">
+          <a href="updates.html#updates">Updates</a>
+          <a href="updates.html#blogs">Blogs</a>
+          <a href="updates.html#archives">Archives</a>
+        </div>
+      </div>
+      <div class="menu"><button type="button">Brands Carried ▾</button>
+        <div class="dropdown">
+          <a href="brands.html#grav">GRAV</a>
+          <a href="brands.html#zong">ZONG</a>
+          <a href="brands.html#puffco">PuffCo</a>
+          <a href="brands.html#focusv">Focus V</a>
+          <a href="brands.html#more">More...</a>
+        </div>
+      </div>
       <a href="artists.html">Local Artists</a>
       <a href="reviews.html">Reviews</a>
-      <a class="active" href="team.html">Team</a>
+      <a class="active" href="crew.html">Team</a>
       <a href="story.html">How We Rolled Up</a>
       <a href="visit.html">Visit</a>
     </nav>
@@ -23,6 +46,13 @@
 <script>
 const btn=document.querySelector('.menu-btn'); const nav=document.querySelector('.nav');
 btn.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open?'true':'false'); });
+document.addEventListener('click', (e)=>{
+  if(!e.target.closest('.menu')) document.querySelectorAll('.menu').forEach(m=>m.classList.remove('open'));
+});
+document.querySelectorAll('.menu>button').forEach(b=>b.addEventListener('click', (e)=>{
+  const m=e.currentTarget.parentElement; m.classList.toggle('open');
+  document.querySelectorAll('.menu').forEach(x=>{ if(x!==m) x.classList.remove('open'); });
+}));
 </script>
 
 <section class="section"><div class="container">
@@ -46,4 +76,6 @@ btn.addEventListener('click',()=>{ const open=nav.classList.toggle('open'); btn.
       <div style="margin-top:6px;">All Products are Compliant with applicable VA State Laws. THCa/Hemp Derived Products are not for Sale where Prohibited. All Products are Legal under the 2018 Farm Bill Act.</div>
     </div>
   </div><hr><div class="muted">© 2025 Route 420 LLC. All rights reserved.</div></div></div></footer>
+</body></html>
+
 </body></html>
