@@ -1,0 +1,23 @@
+
+/* Logo-only header + Bebas + denser nav + safe z-index */
+@font-face{
+  font-family: 'Bebas';
+  src: url('fonts/bebas/BebasNeue-Regular.woff2') format('woff2'),
+       url('fonts/bebas/BebasNeue-Regular.woff') format('woff'),
+       url('fonts/bebas/BebasNeue-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+h1, h2, .header .nav a, .header .nav .menu>button{
+  font-family: 'Bebas', 'Bebas Neue', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: .5px;
+}
+.header .brand span{ display:none !important; }
+.header .brand img{ height:56px; }
+@media (max-width:860px){ .header .brand img{ height:48px; } }
+.header{ position:sticky; top:0; z-index:900; }
+.header .nav{ gap:10px; white-space:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.nav a, .nav .menu>button{ padding:6px 8px; font-size:16px; border-radius:10px; }
+.nav .dropdown{ position:absolute; top:100%; left:0; z-index:1200; min-width:220px; background:#0a0a0a; border:1px solid #1a1a1a; border-radius:12px; padding:8px; display:none; }
+.nav .menu.open .dropdown{ display:block; }
+.nav .dropdown a{ display:block; padding:8px 10px; border-radius:8px; }
+.nav .dropdown a:hover{ background:#111; }
