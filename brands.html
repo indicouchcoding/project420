@@ -44,9 +44,37 @@ closeBtn.addEventListener('click', closeDrawer);
 overlay.addEventListener('click', closeDrawer);
 addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
 drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeDrawer));
-</script><section class="section"><div class="container"><h2>Brands Carried</h2><p class="muted">Content goes here.</p></div></section>
+</script>
 
-  <!-- Featured Brand Cards (place this after the existing Brands grid) -->
+<section class="section">
+  <div class="container">
+    <h2>Brands Carried</h2>
+    <p class="muted">Content goes here.</p>
+
+    <!-- 3×1 Featured Brand Cards -->
+    <div class="grid grid-3" style="margin-top:14px;">
+      <a class="card brand-card" href="#grav" aria-label="GRAV">
+        <img class="brand-card-img" src="img/placeholder-1.jpg" alt="GRAV (placeholder)" loading="lazy">
+      </a>
+      <a class="card brand-card" href="#puffco" aria-label="PuffCo">
+        <img class="brand-card-img" src="img/placeholder-2.jpg" alt="PuffCo (placeholder)" loading="lazy">
+      </a>
+      <a class="card brand-card" href="#zong" aria-label="ZONG">
+        <img class="brand-card-img" src="img/placeholder-3.jpg" alt="ZONG (placeholder)" loading="lazy">
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* scoped to this page */
+  .brand-card{ padding:0; overflow:hidden; }
+  .brand-card-img{ width:100%; height:100%; display:block; object-fit:cover; }
+  @media (min-width:861px){ .brand-card{ height:240px; } }
+  @media (max-width:860px){ .brand-card{ height:200px; } }
+</style>
+
+<!-- Featured Brand Cards (place this after the existing Brands grid) -->
 <section class="section">
   <div class="container">
     <h2 style="margin-bottom:10px;">Featured Brands</h2>
