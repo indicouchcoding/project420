@@ -44,7 +44,104 @@ closeBtn.addEventListener('click', closeDrawer);
 overlay.addEventListener('click', closeDrawer);
 addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
 drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeDrawer));
-</script><section class="section"><div class="container"><h2>Reviews</h2><p class="muted">Content goes here.</p></div></section>
+</script><section class="section"><div class="container"><h2>Reviews</h2><p
+
+<section class="section">
+  <div class="container">
+    <h2>Reviews</h2>
+    <div class="grid grid-3" style="margin-top:14px;">
+      <!-- 1 -->
+      <article class="card review-card">
+        <div class="stars" aria-label="5 out of 5">★★★★★</div>
+        <p class="muted">“Love this place I can go in here and check things out for a good hour. The people and staff here are extremely nice as well as knowledgeable on all the products they sell. Prices are pretty good too.”</p>
+        <p class="muted sig">— RC</p>
+      </article>
+
+      <!-- 2 -->
+      <article class="card review-card">
+        <div class="stars" aria-label="5 out of 5">★★★★★</div>
+        <p class="muted">“They have friendly and helpful staff, a nice selection of products, and the best prices around Staunton (at least as far as I'm aware). Their disposable vapes always check out as authentic when I scratch off the box to reveal the QR code to check authenticity. You can tell they care about carrying high quality products when it comes to everything they sell. It also seems like they're always trying to improve and source the best products they can while still caring about offering the best prices to the consumer. This is my favorite vape shop in Staunton by far.”</p>
+        <p class="muted sig">— WG</p>
+      </article>
+
+      <!-- 3 -->
+      <article class="card review-card">
+        <div class="stars" aria-label="5 out of 5">★★★★★</div>
+        <p class="muted">“Very knowledgeable and friendly staff. Great selection. This is the place to go!”</p>
+        <p class="muted sig">— Jake S.</p>
+      </article>
+
+      <!-- 4 -->
+      <article class="card review-card">
+        <div class="stars" aria-label="5 out of 5">★★★★★</div>
+        <p class="muted">“My go to place. Employees are always nice and helpful. Highly recommended!”</p>
+        <p class="muted sig">— Chelsie R.</p>
+      </article>
+
+      <!-- 5 -->
+      <article class="card review-card">
+        <div class="stars" aria-label="5 out of 5">★★★★★</div>
+        <p class="muted">“Great place and polite people. Always nice to visit here”</p>
+        <p class="muted sig">— Ashley L.</p>
+      </article>
+
+      <!-- 6 -->
+      <article class="card review-card">
+        <div class="stars" aria-label="5 out of 5">★★★★★</div>
+        <p class="muted">“Absolutely wonderful business! Staff is so, so nice and attentive and there’s always something fun to snatch up! Glass is beautiful and all other products are top tier! I really appreciate the customer service. Happy to live a block away!”</p>
+        <p class="muted sig">— Chelsea S.</p>
+      </article>
+
+      <!-- 7 -->
+      <article class="card review-card">
+        <div class="stars" aria-label="5 out of 5">★★★★★</div>
+        <p class="muted">“What can I say about this beautiful business filled with wonderful staff, great products, and low prices? They’ve been quite an asset to me since moving here to Staunton, VA from Waynesboro. Pretty much been coming here since the beginning of my relationship, and I’m always happy to walk through the door and talk for a couple minutes while also getting great service. I don’t even have to say what I want half the time because they already know 🤣🤣 Thank you all for being a great part of the community and helping me stay sane through all the craziness.”</p>
+        <p class="muted sig">— Autumn S.</p>
+      </article>
+
+      <!-- 8 -->
+      <article class="card review-card">
+        <div class="stars" aria-label="5 out of 5">★★★★★</div>
+        <p class="muted">“Absolutely love this store!!! They have the best quality of products and great prices! All the people that work here are the best and always give a helping hand. Definitely great people, I wouldn't go anywhere else!”</p>
+        <p class="muted sig">— Toni R.</p>
+      </article>
+
+      <!-- 9 -->
+      <article class="card review-card">
+        <div class="stars" aria-label="5 out of 5">★★★★★</div>
+        <p class="muted">“Friendly and knowledgeable staff, great assortment of products, good prices, can’t beat it”</p>
+        <p class="muted sig">— David G.</p>
+      </article>
+
+      <!-- 10 -->
+      <article class="card review-card">
+        <div class="stars" aria-label="5 out of 5">★★★★★</div>
+        <p class="muted">“They are always very friendly and helpful. The store is usually always well stocked and clean. It's pretty straightforward, and they don't judge. 10/10 would recommend.”</p>
+        <p class="muted sig">— Courtney M.</p>
+      </article>
+    </div>
+
+    <div class="card inner" style="margin-top:16px;">
+      <p>
+        <a class="btn" href="https://www.google.com/search?q=Route+420+Staunton+VA+reviews" target="_blank" rel="noopener">Open Google Reviews</a>
+        <a class="btn" style="margin-left:8px;" href="https://www.facebook.com/420Route/reviews" target="_blank" rel="noopener">View Facebook Reviews</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* scoped polish for review cards; keeps your dark theme */
+  .review-card{ padding:16px; }
+  .review-card .stars{
+    font-size:16px; letter-spacing:1px; color:#ffd166; /* warm gold */
+    text-shadow: 0 0 6px rgba(255,209,102,.25);
+    margin-bottom:8px;
+  }
+  .review-card .sig{ font-size:12px; margin-top:6px; }
+</style>
+                                                                           
+                                                                           
 <footer><div class="container"><div class="card inner">
   <div class="grid grid-2">
     <div><div class="brand"><img src="img/logo.png" alt="Route 420" style="height:28px;"> <span>Premium Glass</span></div>
