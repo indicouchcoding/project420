@@ -44,8 +44,46 @@ closeBtn.addEventListener('click', closeDrawer);
 overlay.addEventListener('click', closeDrawer);
 addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
 drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeDrawer));
-</script><section class="section"><div class="container"><h2>Updates/Blog</h2><p class="muted">Content goes here.</p></div></section>
-<footer><div class="container"><div class="card inner">
+</script><section class="section"><div class="container"><h2>Updates/News</h2><p class="muted">Keep up with the Shop</p></div></section>
+
+<!-- Updates Grid -->
+<section class="section">
+  <div class="container">
+    <h2 id="updates">Updates</h2>
+
+    <div class="grid grid-3" style="margin-top:14px;">
+      <!-- Update card -->
+      <article class="card" style="padding:16px;">
+        <div class="muted" style="font-size:12px;">Sep 20, 2025</div>
+        <h3 style="margin-top:6px;">New Glass Drop Incoming</h3>
+        <p class="muted" style="margin-top:8px;">
+          We’re unpacking a fresh batch of recyclers and mini beakers this weekend. Call ahead to hold your favorites.
+        </p>
+      </article>
+
+      <!-- Duplicate/modify cards as needed -->
+      <article class="card" style="padding:16px;">
+        <div class="muted" style="font-size:12px;">Sep 15, 2025</div>
+        <h3 style="margin-top:6px;">Store Hours Update</h3>
+        <p class="muted" style="margin-top:8px;">
+          We’re now open daily 10am–8pm. Slide through anytime for premium glass, disposables, and more.
+        </p>
+      </article>
+
+      <article class="card" style="padding:16px;">
+        <div class="muted" style="font-size:12px;">Sep 10, 2025</div>
+        <h3 style="margin-top:6px;">Local Artist Feature</h3>
+        <p class="muted" style="margin-top:8px;">
+          This week we’re spotlighting @glasswizard — UV accented rigs and clean function. Ask to see it under the light.
+        </p>
+      </article>
+
+      <!-- Add more cards by copying one <article> block -->
+    </div>
+  </div>
+</section>
+   
+  <footer><div class="container"><div class="card inner">
   <div class="grid grid-2">
     <div><div class="brand"><img src="img/logo.png" alt="Route 420" style="height:28px;"> <span>Premium Glass</span></div>
       <div class="muted">Premium Glass • THCa Flower • Edibles • Disposables</div></div>
