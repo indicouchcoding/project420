@@ -45,7 +45,37 @@ overlay.addEventListener('click', closeDrawer);
 addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeDrawer(); });
 drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeDrawer));
 </script><section class="section"><div class="container"><h2>Brands Carried</h2><p class="muted">Content goes here.</p></div></section>
-<footer><div class="container"><div class="card inner">
+
+  <!-- Featured Brand Cards (place this after the existing Brands grid) -->
+<section class="section">
+  <div class="container">
+    <h2 style="margin-bottom:10px;">Featured Brands</h2>
+    <div class="grid grid-3">
+      <a class="card brand-card" href="#grav" aria-label="GRAV">
+        <img class="brand-card-img" src="img/placeholder-1.jpg" alt="GRAV (placeholder)" loading="lazy">
+      </a>
+      <a class="card brand-card" href="#puffco" aria-label="PuffCo">
+        <img class="brand-card-img" src="img/placeholder-2.jpg" alt="PuffCo (placeholder)" loading="lazy">
+      </a>
+      <a class="card brand-card" href="#zong" aria-label="ZONG">
+        <img class="brand-card-img" src="img/placeholder-3.jpg" alt="ZONG (placeholder)" loading="lazy">
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Scoped to brands.html only */
+  .brand-card{ padding:0; overflow:hidden; }
+  .brand-card-img{ width:100%; height:100%; display:block; object-fit:cover; }
+  @media (min-width:861px){ .brand-card{ height:240px; } }
+  @media (max-width:860px){ .brand-card{ height:200px; } }
+</style>
+
+  
+  
+  
+  <footer><div class="container"><div class="card inner">
   <div class="grid grid-2">
     <div><div class="brand"><img src="img/logo.png" alt="Route 420" style="height:28px;"> <span>Premium Glass</span></div>
       <div class="muted">Premium Glass • THCa Flower • Edibles • Disposables</div></div>
